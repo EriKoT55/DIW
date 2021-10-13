@@ -1,0 +1,31 @@
+.c1{
+    font-family: 'Roboto', sans-serif;
+}
+.c2{
+    font-family: 'Scheherazade New', serif;
+}
+.c3{
+    font-family: 'Festive', cursive;
+}
+.a1{
+    color:black;
+    text-decoration: none;
+}
+.a2{
+    color:rgb(146, 0, 0);
+    text-decoration: none;
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+}
+.square{
+    list-style-type: square;
+}
+.rectangulito{
+    border:2px solid black;
+    background-color:rgb(255, 132, 0) ;
+   
+}
