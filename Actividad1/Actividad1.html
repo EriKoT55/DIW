@@ -6,18 +6,21 @@
     <title>Actividad1</title>
     <!-- enlazar archivo css -->
     <link href="estilos.css" rel="stylesheet" type="text/css">
+    <!-- formato de texto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Roboto:wght@100&family=Scheherazade+New&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Roboto:wght@100&family=Scheherazade+New&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- Parragrafos -->
+    <!-- Paragrafos -->
     <p><span class="c1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.</span><span class="c2"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat.</span><span class="c3"> Duis aute irure 
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+            labore et dolore magna aliqua.</span><span class="c2"> Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.</span><span class="c3"> Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim idest laborum.</span></p>
     <br>
     <a class="a1" href="https://www.google.com/">Google</a>
@@ -79,7 +82,7 @@
     <br>
     <!-- Audio -->
     <h4>Audio</h4>
-    <audio controls> 
+    <audio controls>
         <source src="videoplayback.m4a" type="audio/mpeg">
         Tu navegador no aguante tremendo beat.
     </audio>
@@ -89,16 +92,44 @@
     <video width="320" height="240" controls>
         <source src="Lil Globglogabgalab.mp4" type="video/mp4">
         Tu navegador no aguante video tan raro.
-    </video> 
+    </video>
     <br>
     <!-- Canvas -->
     <h4>Canvas</h4>
-    <canvas class="rectangulito"width="200" height="100" >
+    <canvas class="rectangulito" width="200" height="100">
         Tu navegador no agaunte trementdo rectangulito naranja
     </canvas>
     <br>
-    <!-- Menu -->
-    <h4>Menu</h4>
+    <!-- Formulario -->
+    <br>
+    <h4>Formulario</h4>
+    <form>
+
+        Nombre: <input type="text" name="nombre" placeholder="Escriba nombre" maxlength="60" size="50" required>
+        Palabra secreta: <input type="password" name="palabra secreta" placeholder="Escriba la palabra secreta " minlength="6" required>
+        <br><br>
+        Descripción: <textarea type="text" name="descripcion" placeholder="Ponga su descripción" rows="4" cols="30"maxlength="300" ></textarea>
+        Fecha de nacimiento: <input type="date" name="fecha" >
+        <br><br>
+        Color Favorito: <input type="color" name="color">
+        Nivel(del 1 al 10): <input type="range" name="nombre" min="1" max="10">
+        <br><br>
+        Edad: <input type="numbrer" name="edad" required min="0" max="150">
+        Subir archivo: <input type="file" name="subir arhivo" >
+        <br><br>
+        URL: <input type="url" name="url" >
+        E-mail: <input type="email" name="email">
+        <br><br>
+        Numero de Telefono: <input type="tel" name="telefono">
+        Tiempo local: <input type="time" name="tiempo" >
+        <br><br>
+        Fecha y Tiempo local: <input type="datetime-local" name="tiempo/fecha">
+        Semana y año: <input type="week" name="semana/año">
+        <br><br>
+        Mes y año: <input type="month" name="mes/año">
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Resetear">
+    </form>
 </body>
 
 </html>
