@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <style>
+        /* CREATE AT LEAST 11 DIFFERENT STYLES SO THE RESULT IS AS SHOW IN THE PICTURE
+        IT MUST INCLUDE AT LEAST 1 CHILDREN 1 SIBLING 1 ADJACENT SIBLING 1 CLASS 1 ID
+        SPECIFY THE NUMBER OF POINTS FOR EACH STYLE SELECTOR AS PER THE 
+        /* POINTS !important 1000POINTS ID# 100POINTS CLASS 10POINTS TAG 1POINT */
+
+        /* CREA AL MENOS 11 ESTILOS DIFERENTES PARA QUE EL RESULTADO SEA COMO SE MUESTRA EN LA IMAGEN
+        DEBE INCLUIR POR LO MENOS 1 NIÑO 1 HERMANO 1 HERMANO ADYACENTE 1 CLASE 1 ID
+        ESPECIFIQUE EL NÚMERO DE PUNTOS PARA CADA SELECTOR DE ESTILO SEGÚN EL
+        /* PUNTOS! Importante 1000PUNTOS ID # 100PUNTOS CLASE 10PUNTOS ETIQUETA 1PUNTO */
+            
+            
+           ul>ul{
+                background-color:paleturquoise;
+           }
+           ul+div {            
+            font-weight: bold;
+           }
+           ul~div {
+
+                background-color:lightgreen;
+                font-size:small;
+            }
+            b{
+                color:maroon;
+            }
+            
+            .nivel1{
+                color:deeppink;
+                font-size: small;
+            }
+            ul ul .nivel2{
+                color:blue;
+                font-size:medium;
+            }
+            ul ul .nivel1{
+                color:green;
+                font-size: xx-large;
+            }
+            ul  ul li {
+                color:red;
+                font-size: x-large;
+            }
+            ul ul #mydent{
+                color:orange;
+                font-size:medium;
+            }
+            ul  ul div li{
+                color:yellow;
+                font-size:xx-large;
+            }
+
+        </style>    
+        </head>
+        <body>  
+        <h1><p> <i>Título</i>: <b>Anidamiento y agrupamiento </b>de selectors</p></h1>
+        <ul>
+         <li class="nivel1">Agrupamiento</li>
+         <li class="nivel1">Anidamiento</li>
+         <ul>
+            <li class="nivel2"> Agrupamiento de hijos</li>
+            <li class="nivel1"> Agrupamiento de adyacentes</li>
+            <li> Anidamiento común </li>
+            <li id="mydent" class="nivel1"> Anidamiento único </li>
+            <div><li>Greatgrandchilden</li></div>
+         </ul>
+         <div>Divider sibling1</div>
+         <div>Divider sibling2</div>
+        </ul>
+        
+        </body>
+</html>
