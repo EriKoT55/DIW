@@ -25,7 +25,7 @@ img {
 #contenedor {
     width: 90%;
     max-width: 900px;
-    width: "900px" "auto";
+    width: "900px""auto";
     margin: 0 auto;
 }
 
@@ -206,6 +206,7 @@ p {
 
 #lateral .fecha {
     color: #999;
+    padding-right: 70px;
 }
 
 #noticias h3 a {
@@ -230,4 +231,13 @@ p {
 #secundario h2 {
     color: white;
     font-size: 17px;
+}
+
+#pie .enlaces {
+    font-size: small;
+}
+
+#pie .copyright {
+    color: #999;
+    font-size: small;
 }
