@@ -1,0 +1,27 @@
+
+div{
+    background-color: coral;
+}
+h1{
+  text-transform: uppercase;  
+
+}
+table{
+    border-style: none;
+}
+table,tr,th,td{
+    border-collapse: collapse;
+   
+}
+
+th{
+    background-color:deepskyblue;
+    border-style:hidden;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+ td{
+    font-size: xx-large;
+   
+}
