@@ -7,19 +7,31 @@
     left:33vw;
     padding-left: 15px;
     padding-right: 15px;
-    
+    height:558px;
 }
 
 /*Dias Caracteristicas generales*/
 #th{
-    
-    background-color: rgba(0, 255, 255, 0.57);
+    background-color: rgba(0, 174, 255, 0.378);
     border-bottom: 3px solid blue;
     width: 70px;
     height: 20px;
    /*No hace nada solo es por si quiero cambiar el orden*/
-    justify-content:center;
+    font-size: small;
     display:inline-block;
+    font-weight: bold;
+    padding-top: 7px;
+    
+}
+
+/*DiasNums Caracteristicas generales*/
+#td{
+    padding: 29px;
+    border:1px solid black;
+    font-size: large;
+    display:inline-flex;
+    justify-content:center;
+    font-weight: bold;
 }
 
 /* Festivos Caracteristicas generales*/
@@ -30,18 +42,19 @@
     font-size: large;
     display:inline-flex;
     justify-content:center;
+    font-weight: bold;
 }
 
 /*Festivos*/
 .fe1{
     position: absolute;
     left: 385px;
-    top: 110px;
+    top: 113px;
 }
 .fe2{
     position: absolute;
     left: 460px;
-    top: 110px;
+    top: 113px;
 }
 .fe3{
     position: absolute;
@@ -56,46 +69,159 @@
 .fe5{
     position: absolute;
     left: 385px;
-    top: 290px;
+    top: 288px;
     width: 10px;
-    
 }
 .fe6{
     position: absolute;
     left: 460px;
-    top: 290px;
+    top: 288px;
     width: 10px;
 }
 .fe7{
     position: absolute;
     left: 385px;
-    top: 380px;
+    top: 376px;
     width: 10px;
 }
 .fe8{
     position: absolute;
     left: 460px;
-    top: 380px;
+    top: 376px;
     width: 10px;
 }
 .fe9{
     position: absolute;
     left: 385px;
-    top: 470px;
+    top: 464px;
     width: 10px;
 }
 .fe10{
     position: absolute;
     left: 460px;
-    top: 470px;
+    top: 464px;
     width: 10px;
 }
 
 /*Dias*/
-#td{
-    padding: 29px;
-    border:1px solid black;
-    font-size: large;
-    display:inline-flex;
-    justify-content:center;
+
+.td1{
+    position:absolute;
+    left: 16px;
+    top: 200px;
+
+}
+.td2{
+    position:absolute;
+    left: 89px;
+    top: 200px;
+
+}
+.td3{
+    position:absolute;
+    left: 164px;
+    top: 200px;
+
+}
+.td4{
+    position:absolute;
+    left: 238px;
+    top: 200px;
+
+}
+.td5{
+    position:absolute;
+    left: 311px;
+    top: 200px;
+
+}
+.td6{
+    position:absolute;
+    left: 16px;
+    top: 288px;
+    width: 9px;
+}
+.td7{
+    position:absolute;
+    left: 89px;
+    top: 288px;;
+    width: 9px;
+}
+.td8{
+    position:absolute;
+    left: 164px;
+    top: 288px;
+    width: 9px;
+}
+.td9{
+    position:absolute;
+    left: 238px;
+    top: 288px;
+    width: 9px;
+}
+.td10{
+    position:absolute;
+    left: 311px;
+    top: 288px;
+    width: 9px;
+}
+.td11{
+    position:absolute;
+    left: 16px;
+    top: 376px;
+    width: 9px;
+}
+.td12{
+    position:absolute;
+    left: 89px;
+    top: 376px;
+    width: 9px;
+}
+.td13{
+    position:absolute;
+    left: 164px;
+    top: 376px;
+    width: 9px;
+}
+.td14{
+    position:absolute;
+    left: 238px;
+    top: 376px;
+    width: 9px;
+}
+.td15{
+    position:absolute;
+    left: 311px;
+    top: 376px;
+    width: 9px;
+}
+.td16{
+    position:absolute;
+    left: 16px;
+    top: 464px;
+    width: 9px;
+}
+.td17{
+    position:absolute;
+    left: 89px;
+    top: 464px;
+    width: 9px;
+}
+.td18{
+    position:absolute;
+    left: 164px;
+    top: 464px;
+    width: 9px;
+}
+.td19{
+    position:absolute;
+    left: 238px;
+    top: 464px;
+    width: 9px;
+}
+.td20{
+    position:absolute;
+    left: 311px;
+    top: 464px;
+    width: 9px;
 }
