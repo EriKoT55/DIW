@@ -1,5 +1,8 @@
 
 /* Tabla Caracteristicas generales*/
+h1{
+    text-transform: uppercase;
+}
 .h1Ytable{
     background-color: rgba(255, 135, 22, 0.357);
     position: fixed;
@@ -104,7 +107,6 @@
 }
 
 /*Dias*/
-
 .td1{
     position:absolute;
     left: 16px;
