@@ -1,0 +1,18 @@
+
+div{
+    background-color: darkgray;
+    border: 1px solid black;
+    font-size: large;
+    padding:10px;
+    /*position:relative;
+    left:750px;
+    width: 400px;*/
+    height: 20px;
+   
+}
+.izquierda{
+    float: left;
+}
+.derecha{
+    float:right;
+}
