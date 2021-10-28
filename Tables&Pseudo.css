@@ -1,0 +1,33 @@
+/*Creo un div para poder hacer el scroll horizontal a la tabla*/
+div{
+    overflow:scroll;
+}
+table,tr,td{
+    border-collapse: collapse;
+    border:1px solid black;
+    
+}
+td{
+    padding: 10px;
+}
+/*Cambiamos el fondo al pasar por encima de la fila 3*/
+tr:hover:nth-child(3){
+    background-color: rgb(202, 111, 195);
+}
+/*Cambiamos el fondo de los numeros impares */
+tr:nth-child(2n+1){
+    background-color: rgb(209, 209, 209);
+}
+tr:hover{
+    background-color: rgb(232, 167, 117) ;
+}
+/*Camibiamos el fondo y el color de la letra al seleccionarlo*/
+::selection{
+    color:rgb(21, 255, 0);
+    background-color:darkorange;
+}
+/*Cambiamos solo la primera letra de color*/
+td::first-letter{
+    font-size: large;
+    color: red;
+}

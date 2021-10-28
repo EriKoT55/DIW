@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Tablas and Pseudo</title>
+    <link type="text/css" href="Tables&Pseudo.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <table>
+
+        <script>
+            let contador=0;
+            for(let i=0;i<13;i++){
+                
+                document.write("<tr>");
+                    for(let j=0;j<30;j++){
+
+                        document.write("<td>");
+                            document.write("Contador"+"<br>");
+                            document.write(contador++);
+                        document.write("</td>");
+
+                    }
+                    document.write("</tr>");
+                }
+               
+            
+
+        </script>
+
+    </table>
+</div>
+</body>
+</html>
