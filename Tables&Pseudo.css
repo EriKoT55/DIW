@@ -18,6 +18,7 @@ tr:hover:nth-child(3){
 tr:nth-child(2n+1){
     background-color: rgb(209, 209, 209);
 }
+/*Cambiamos el fondo de todos los tr  */
 tr:hover{
     background-color: rgb(232, 167, 117) ;
 }
