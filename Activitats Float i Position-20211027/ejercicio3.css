@@ -54,7 +54,7 @@ h1{
     width: 25%;
     height: 155px;
     position: absolute;
-    top:45%;
+    top:42%;
     left:22%;
     text-align:start;
     z-index: 3;
@@ -65,11 +65,25 @@ h1{
     width: 25%;
     height: 155px;
     position: absolute;
-    top:45%;
+    top:42%;
     left:52%;
     text-align: end;
     z-index: 4;
 }
-
+#m2:hover{
+    z-index: 7;
+}
+#m3:hover{
+    z-index: 7;
+}
+#m4:hover{
+    z-index: 7;
+}
+#m5:hover{
+    z-index: 7;
+}
+#m6:hover{
+    z-index: 7;
+}
 
 
