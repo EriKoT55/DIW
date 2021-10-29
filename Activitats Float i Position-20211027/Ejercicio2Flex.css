@@ -8,23 +8,25 @@ div{
 div.casa{
     background-color: dimgray;
     width: 350px;
-    height: 300px;
+    height: 260px;
     margin: auto;
 }
 div.tejado{
     background-color: rgb(255, 111, 0);
     width: 370px;
-    height: 70px;
+    height: 60px;
     margin-left: 278px;
    
 }
 .puerta{
-    text-align: center;
+    justify-content: center;
     background-color: rgb(79, 45, 19);
     width: 90px;
     height: 90px;
     font-size: x-large;
-    
+    position: absolute;
+    top:251px;
+    right:425px;
 }
 
 .ventana{
@@ -32,12 +34,16 @@ div.tejado{
     background-color: white;
     width: 60px;
     height: 60px;
-    
+    position: absolute;
+    top:150px;
+    left:320px;
 }
 .ventana2{
 
     background-color: white;
     width: 60px;
     height: 60px;
-    
+    position: absolute;
+    top:215px;
+    right:320px;
 }
