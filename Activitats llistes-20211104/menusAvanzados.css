@@ -1,20 +1,27 @@
-ul.menu {
-    background: #F4F4F4;
-    border: 1px solid #7C7C7C;
+ul.menu1 {
+    background: rgba(54, 187, 248, 0.761);
+    border: 1px solid rgba(0, 0, 0, 0.761);
     list-style: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    align-content: center;
+    text-align: center;
+
 }
-ul.menu li {
+ul.menu1 li {
     float: left;
-    width: 20%;
+    width: auto;
+    background-color: rgb(202, 202, 202);
+    border-radius: 10%;
+    border:1px solid black;
+    align-content: center;
 }
-ul.menu li a {
-    border-left: 1px solid #FFF;
-    border-right: 1px solid #7C7C7C;
+ul.menu1 li a {
+    align-content: center;
     color: #333;
     display: block;
     padding: .3em;
     text-decoration: none;
+    align-content: center;
  }
