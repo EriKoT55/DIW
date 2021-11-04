@@ -1,6 +1,78 @@
+/*Debo hacerlo con links cuando clico en una imagen debo mostrar el texto correspondiente en el centro,
+lo que queria hacer yo era ponerlo con hover al pasar por encima de por ejemplo gato 
+, que saliera el texto correspondiente pero ahora que lo iba a llevar a la practica 
+he visto que no es posible*/
 #centrar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: rgb(244, 209, 96);
+}
+#contenedor{
 
+}
+#contenedor2{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top:35%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    border-radius: 5%;
+}
+p{
+    font-size: large;
+}
+span{
+    color:red;
+    font-size: xx-large;
+}
+#periodico{
+    position: absolute;
+    top:5%;
+    left: 5%;
+}
+#gato{
+     position: absolute;
+    right:5%;
+    top:5%;
+}
+#dinero{
+    position: absolute;
+    top:75%;
+    left: 5%;
+}
+#television{
+    position: absolute;
+    top:75%;
+    right: 5%;
+}
+.Tgatos{
+    background-color: white;
+}
+.gatos{
+    position: absolute;
+    top:30%;
+    
+}
+.Tperiodico{
+    background-color: white;
+}
+.periodico{
+    position: absolute;
+    top:30%;
+    
+}
+.Tdinero{
+    background-color: white;
+}
+.dinero{
+    position: absolute;
+    top:30%;
+    
+}
+.Ttelevision{
+    background-color: white;
+}
+.television{
+    position: absolute;
+    top:30%;
+    
 }
