@@ -1,27 +1,198 @@
-ul.menu1 {
-    background: rgba(54, 187, 248, 0.761);
-    border: 1px solid rgba(0, 0, 0, 0.761);
+
+ ul.menu1 {
+  
+    background: linear-gradient(rgba(81, 198, 252, 0.672), rgba(159, 223, 253, 0.672));
+    overflow: hidden;
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    align-content: center;
-    text-align: center;
-
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    
 }
 ul.menu1 li {
-    float: left;
     width: auto;
-    background-color: rgb(202, 202, 202);
-    border-radius: 10%;
-    border:1px solid black;
-    align-content: center;
+    background: linear-gradient(rgb(204, 229, 245), rgb(187, 229, 250));
+    border-top-left-radius: 14%;
+    border-top-right-radius: 14%;
+    border:1px solid rgb(163, 163, 163);
+    border-bottom: none;
+    padding: 3px;
+    
+}
+ul.menu1 li:hover {
+   
+    background: linear-gradient(rgb(163, 215, 247), rgb(214, 238, 250));
+    
+}
+ul.menu1 li:active {
+   
+    background: linear-gradient(rgb(252, 182, 116), rgb(250, 222, 169));
+    
 }
 ul.menu1 li a {
-    align-content: center;
+    
     color: #333;
-    display: block;
     padding: .3em;
     text-decoration: none;
-    align-content: center;
+    
+ }
+
+ ul.menu2 {
+    background: linear-gradient(rgb(213, 213, 213), rgb(172, 172, 172));
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    
+}
+ul.menu2 li {
+    width: auto;
+    background: linear-gradient(rgb(221, 221, 221), rgb(179, 179, 179));
+    border-top-left-radius: 14%;
+    border-top-right-radius: 14%;
+    border:1px solid rgb(163, 163, 163);
+    border-bottom: none;
+    padding: 3px;
+    
+}
+ul.menu2 li:hover {
+   
+    background: linear-gradient(rgb(162, 162, 162), rgb(211, 211, 211));
+    
+}
+ul.menu2 li:active {
+   
+    background: linear-gradient(rgb(252, 182, 116), rgb(250, 222, 169));
+    
+}
+ul.menu2 li a {
+    
+    color: #333;
+    padding: .3em;
+    text-decoration: none;
+    
+ }
+
+ ul.menu3 {
+   
+    background: linear-gradient(rgb(232, 255, 223), rgb(218, 255, 203));
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    
+}
+ul.menu3 li {
+    width: auto;
+    
+    background: linear-gradient(rgb(116, 252, 116), rgb(192, 250, 169));
+    border-top-left-radius: 14%;
+    border-top-right-radius: 14%;
+    border:1px solid rgb(163, 163, 163);
+    border-bottom: none;
+    padding: 3px;
+    
+}
+ul.menu3 li:hover {
+   
+    background: linear-gradient(rgb(46, 201, 46), rgb(221, 221, 221));
+    
+}
+ul.menu3 li:active {
+   
+    background: linear-gradient(rgb(252, 182, 116), rgb(250, 222, 169));
+}
+ul.menu3 li a {
+    
+    color: #333;
+    padding: .3em;
+    text-decoration: none;
+    
+ }
+
+ ul.menu4 {
+    
+    background: linear-gradient(rgb(255, 192, 253), rgba(252, 228, 255, 0.761));
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    
+}
+ul.menu4 li {
+    width: auto;
+    background: linear-gradient(rgb(253, 253, 253), rgba(242, 181, 250, 0.747));
+    border-top-left-radius: 14%;
+    border-top-right-radius: 14%;
+    border:1px solid rgb(163, 163, 163);
+    border-bottom: none;
+    padding: 3px;
+    
+}
+ul.menu4 li:hover {
+   
+    background: linear-gradient(rgb(255, 192, 253), rgba(252, 228, 255, 0.761));
+    
+}
+ul.menu4 li:active {
+   
+    background: linear-gradient(rgb(252, 182, 116), rgb(250, 222, 169));
+}
+ul.menu4 li a {
+    
+    color: rgb(255, 0, 225);
+    padding: .3em;
+    text-decoration: none;
+    
+ }
+ ul.menu5 {
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    
+}
+ul.menu5 li {
+    width: auto;
+    background: linear-gradient(rgb(111, 0, 0),rgb(216, 37, 37));
+    
+    border:1px solid rgb(163, 163, 163);
+    border-bottom: none;
+    border-left: none;
+    border-top:none;
+    padding: 3px;
+    
+}
+ul.menu5 li:hover {
+   
+    
+    background: linear-gradient(rgb(150, 0, 0),rgb(111, 0, 0));
+    
+}
+ul.menu5 li:active {
+   
+    
+    background: linear-gradient(rgb(209, 154, 102),rgb(136, 66, 0));
+}
+ul.menu5 li a {
+    
+    color: rgb(255, 255, 255);
+    padding: .3em;
+    text-decoration: none;
+    
  }
