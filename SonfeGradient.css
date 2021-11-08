@@ -3,7 +3,6 @@
     height: 150px;
     background: linear-gradient(rgb(72, 255, 0),rgb(221, 255, 0));
     
-    border: 1px solid black;
 }
 .logo{
     padding-top:8px ;
@@ -13,19 +12,49 @@
     color:white;
 }
 .clearfix{
+display: flex;
+width: 100%;
+}
+.columnMenu{
 
-
-
+margin-left:-40px;
+width: 20%;
 }
 li{
     background: green;
     list-style: none;
-    padding: 1%;
     color:white;
     font-size:medium;
-    width: 15%;
+    padding: 2%;
+    margin-bottom:2%;
 }
 li::first-letter{
     color:goldenrod;
     font-size: x-large;
+}
+.columnContent{
+
+  margin-left:5% ;
+  width: 70%;
+  font-size: large;
+
+}
+.columnNews{
+float:right;
+border:5px solid green;
+width: 20%;
+height: 180px;
+margin:1%;
+align-content: center;
+font-size: large;
+}
+
+.footer{
+    padding: 2%;
+    width: 96%;
+    background: radial-gradient(green 5%,rgb(24, 209, 24) 30%,greenyellow 60%);
+    height: 60px;
+}
+.copyLeft{
+    float:right;
 }
