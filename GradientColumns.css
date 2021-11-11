@@ -1,0 +1,35 @@
+h1{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(-190deg,grey,lightblue,blue);
+    text-align: center;
+    padding: 3%;
+    border-radius: 22%;
+}
+ul{
+    list-style: none;
+    background-color: rgb(24, 0, 109);
+    overflow: hidden;
+} 
+ul li{
+    display: block;
+    color:white;
+    float:left;
+    padding:20px;
+    text-align: center;
+    padding-left: 15%;
+}
+.block{
+    display:flex;
+   
+}
+.div{
+    margin-left:25px;
+    text-align:justify;
+}
+footer{
+    background: radial-gradient(farthest-corner at 10% 10% ,grey 42%,lightblue,blue);
+    width: 100%;
+    height: 70px;
+    border-radius: 0px 40% 0px  40%;
+}
