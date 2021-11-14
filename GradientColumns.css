@@ -10,30 +10,32 @@ h2{
 padding-top: 2.2%;
 }
 /*Cuadrar la lista con el texto dar padding 25%, o fraccionar un 25% el espacio */
+.nav{
+   min-width: 100%;
+
+}
 ul{
     list-style: none;
     background-color: rgb(13, 0, 61);
     overflow: hidden;
+    
 } 
 ul li{
     display: block;
     color:white;
     float:left;
     padding:20px;
+    min-width:22.85%;
     text-align: center;
-    align-content: center;
-    padding-left: 13%;
 }
 /*Subir texto con la imagen*/
 img{
     width: 15%;
-    display: flex;
 }
-h4{
-    display: flex;
-}
+
 .block{
     display:flex;
+    width: 100%;
 }
 .div{
     margin-left:3%;
