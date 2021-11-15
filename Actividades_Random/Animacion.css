@@ -1,0 +1,61 @@
+.chica{
+    width: 256px;
+    height: 256px;
+    margin:auto;
+    background: url(/Actividades_Random/Sprites/run.png) repeat-x;
+    animation:walk 0.4s steps(6) infinite;
+}
+@keyframes walk{
+    0% {background-position: 0 }
+    100% {background-position:-1536px }
+}
+
+.monstruo{
+   
+    width: 190px;
+    height: 240px;
+    margin:auto;
+    background: url(/Actividades_Random/Sprites/foto.png) repeat-x;
+    animation:comer 0.4s steps(10) infinite;
+}
+@keyframes comer{
+    0% {background-position: 0 }
+    100% {background-position:-1900px }
+}
+
+
+.flags{
+    width: 50px;
+    height: 46px;
+    margin:auto;
+    background: url(/Actividades_Random/Sprites/flags.png) no-repeat;
+    animation:pasar 2s steps(16) infinite,
+              pasar2 32s steps(15) infinite;
+   
+}
+@keyframes pasar{
+    0% {background-position-x: 0  }
+    100% {background-position-x:-800px }
+}
+@keyframes pasar2{
+    0% {background-position-y: 0 }
+    100% {background-position-y:-750px }
+}
+
+.moneda{
+    width: 1024px;
+    height: 180px;
+    margin:auto;
+    background: url(/Actividades_Random/Sprites/money.jpg) no-repeat;
+    animation:trans 1s steps(7) infinite,
+              trans2 7s steps(5) infinite;
+   
+}
+@keyframes trans{
+    0% {background-position-x: 0  }
+    100% {background-position-x:-1024px }
+}
+@keyframes trans2{
+    0% {background-position-y: 0 }
+    100% {background-position-y:-1024px }
+}

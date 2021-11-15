@@ -34,8 +34,9 @@ ul li{
     color:white;
     float:left;
     padding:14px;
-    min-width: 23%;
+    min-width: 21.80%;
     text-align: center;
+    /*GRID*/
     display: grid;
     gap:1rem;
     grid-auto-flow: dense;

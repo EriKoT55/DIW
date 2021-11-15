@@ -1,0 +1,75 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cara{
+    background-color: rgb(199, 199, 199);
+    width: 150px;
+    height: 150px;
+    transition: border-radius 2s, background-color 1s;
+}
+.ojoRight{
+    position:relative;
+    left:25px;
+    background-color: rgb(100, 100, 100);
+    width: 30px;
+    height: 30px;
+    transition: border-radius 2s, background-color 1s;
+}
+.ojoLeft{
+    position:relative;
+    top:30px;
+    left:100px;
+    background-color: rgb(100, 100, 100);
+    width: 30px;
+    height: 30px;
+    transition: border-radius 2s, background-color 1s;
+
+}
+
+.smile{
+    position:relative;
+    top:38px;
+    left:27px;
+    border:1px solid black;
+    width: 94px;
+    height: 30px;
+    border-top:none;
+    transition: border-radius 2s, background-color 1s;
+}
+
+.cara:hover{
+    border-radius: 100%;
+    transition: border-radius 2s,width 2s, height 2s, background-color 1s;
+    background-color: rgb(233, 174, 26);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.741),
+                0px -2px 10px rgba(0, 0, 0, 0.734)
+    ;
+ 
+}
+.ojoRight:hover{
+    border-radius: 60%;
+    transition: border-radius 2s,width 2s, height 2s, background-color 1s;
+    background-color: rgb(0, 0, 0);
+    height: 30px;
+    width: 30px;
+}
+
+.ojoLeft:hover{
+    border-radius: 60%;
+    transition: border-radius 2s,width 2s, height 2s, background-color 1s;
+    background-color: rgb(0, 0, 0);
+    height: 30px;
+    width: 30px;
+}
+
+.smile:hover{
+    border:3px solid black;
+    border-left: none;
+    border-right: none;
+    border-top:none;
+    border-radius: 90%;
+    transition: border-radius 2s;
+    
+}
