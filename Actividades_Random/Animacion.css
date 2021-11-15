@@ -42,13 +42,14 @@
     100% {background-position-y:-750px }
 }
 
+
 .moneda{
     width: 1024px;
     height: 180px;
     margin:auto;
     background: url(/Actividades_Random/Sprites/money.jpg) no-repeat;
-    animation:trans 1s steps(7) infinite,
-              trans2 7s steps(5) infinite;
+    animation:trans 2s steps(7) infinite,
+              trans2 14s steps(5) infinite;
    
 }
 @keyframes trans{
@@ -58,4 +59,60 @@
 @keyframes trans2{
     0% {background-position-y: 0 }
     100% {background-position-y:-1024px }
+}
+
+
+.micky{
+    width: 256px;
+    height: 308px;
+    margin:auto;
+    background: url(/Actividades_Random/Sprites/mickey-sprite.png) no-repeat;
+    animation:giro 3s steps(8) infinite,
+              giro2 24s steps(5) infinite;
+   
+}
+@keyframes giro{
+    0% {background-position-x: 0  }
+    100% {background-position-x:-2048px }
+}
+@keyframes giro2{
+    0% {background-position-y: 0 }
+    100% {background-position-y:-1540px }
+}
+
+.explosion{
+    width: 100px;
+    height: 100px;
+    margin:auto;
+    background: url(/Actividades_Random/Sprites/explosion.png) no-repeat;
+    animation:exp 1s steps(6) infinite,
+              exp2 1s steps(6) infinite;
+   
+}
+@keyframes exp{
+    0% {background-position-x: 0  }
+    100% {background-position-x:-600px }
+}
+@keyframes exp2{
+    0% {background-position-y: 0 }
+    100% {background-position-y:-600px }
+}
+
+
+.espia{
+    width: 80px;
+    height: 94px;
+    margin:auto;
+    background: url(/Actividades_Random/Sprites/Jason_Bourne.png) no-repeat;
+    animation:mov 1s steps(8) infinite,
+              mov2 8s steps(5) infinite;
+   
+}
+@keyframes mov{
+    0% {background-position-x: 0  }
+    100% {background-position-x:-640px }
+}
+@keyframes mov2{
+    0% {background-position-y: 0 }
+    100% {background-position-y:-470px }
 }
