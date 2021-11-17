@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/*el sass debe contener al menos 4 variables, 1 pseudo-clase, 
+1 pseudo-elemento, 2 mixins, 2 directivas de medios y 1 función*/
+.header {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(#48ff00, #ddff00); }
+
+.logo {
+  padding-top: 8px;
+  float: right; }
+
+

@@ -1,0 +1,29 @@
+/*el sass debe contener al menos 4 variables, 1 pseudo-clase, 
+1 pseudo-elemento, 2 mixins, 2 directivas de medios y 1 función*/
+
+    /*COMANDO PARA COMPILAR DE SCSS A CSS*/
+// sass SonfeGradient.scss SonfeGradient.css
+
+  /*LINK PARA COMPRENDER MEJOR ESTO DE SCSS*/
+/*https://www.w3schools.com/sass/sass_intro.php*/
+
+//********************Variables*************************
+
+//Variable para el linear gradient
+$bg-lg:linear-gradient(rgb(72, 255, 0), rgb(221, 255, 0));
+
+$
+
+
+//*******************************************************
+
+//SCSS
+.header {
+    width: 100%;
+    height: 150px;
+    background: $bg-lg;
+}
+.logo{
+    padding-top:8px ;
+    float:right;
+  }

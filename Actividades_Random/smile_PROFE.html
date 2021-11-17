@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SMILE</title>
+	<style type="text/css">
+		#face {
+			position: relative;
+			width: 300px;
+			height: 300px;
+			margin: 50px;
+			background-color: lightgray;
+			transition: background-color 2s,box-shadow 2s 2s,border-radius 2s 4s;
+		}
+
+		#eye1,#eye2 {
+			position: absolute;
+			background-color: gray;
+			width: 50px;
+			height: 50px;
+			top: 40px;
+			margin: 0px;
+			transition: background-color 2s 6s,height 2s 8s,border-radius 2s 10s;				
+		}
+
+		#eye1 {
+			left: 75px;
+		}
+
+		#eye2 {
+			right: 75px;
+		}
+
+		#mouth {
+			position: absolute;
+			left: 40px;
+			bottom: 50px;
+			width: 200px;
+			height: 70px;
+			border-bottom: 2px solid black;
+			border-left: 2px solid black;
+			border-right: 2px solid black;
+			transition: border-bottom 2s 12s,border-left 2s 13s,border-right 2s 12s,border-radius 2s 14s;	
+		}
+
+		#face:hover {
+			background-color: #ffe632;
+			border-radius: 150px;
+			box-shadow: inset 0px -14px 14px rgba(0, 0, 0, 0.3), 0px 2px 20px rgba(0, 0, 0, 0.6);			
+		}
+
+		#face:hover #eye1,#face:hover #eye2 {
+			height: 80px;
+			border-radius: 100px 160px 100px 160px;
+			background-color: black;	
+		}
+
+		#face:hover #mouth {
+			border-bottom: 10px solid black;
+			border-left: 10px solid black;
+			border-right: 10px solid black;
+			border-radius: 0 0 120px 120px / 0 0 90px 90px; /* elliptical corners */			
+		}
+	</style>
+</head>
+<body>
+	<div id="face">
+		<div id="eye1"></div>
+		<div id="eye2"></div>
+		<div id="mouth"></div>
+	</div>
+
+</body>
+</html>
