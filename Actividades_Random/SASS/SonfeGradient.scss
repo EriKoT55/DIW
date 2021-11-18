@@ -1,5 +1,5 @@
-/*el sass debe contener al menos 4 variables, 1 pseudo-clase, 
-1 pseudo-elemento, 2 mixins, 2 directivas de medios y 1 función*/
+/*el sass debe contener al menos 
+ 2 media*/
 
     /*COMANDO PARA COMPILAR DE SCSS A CSS*/
 // sass SonfeGradient.scss SonfeGradient.css
@@ -12,18 +12,122 @@
 //Variable para el linear gradient
 $bg-lg:linear-gradient(rgb(72, 255, 0), rgb(221, 255, 0));
 
-$pt:0px;
+//padding
+$p:0px;
 
+//Dar porcentajes
+$porcentajes:2%;
+
+//Font-size
+$fontS:large;
 
 //*******************************************************
 
+//mixin
+@mixin li{
+  color:white;
+  list-style: none;
+  font-size:medium;
+  background: green;
+}
+@mixin floatR{
+  float:right;
+}
+
+//Media(TERMINAR EN CASA)
+@media only screen and (min-width: 600px) {
+  .menu {
+    width: 25%;
+  }
+  .content {
+    width: 75%;
+  }
+  .news {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .menu {
+    width: 25%;
+  }
+  .content {
+    width: 50%;
+  }
+  .news {
+    width: 25%;
+  }
+}
+
+//Funcion
+@function height($num){
+  @return $num*2;
+}
+
 //SCSS
 .header {
-    width: 100%;
-    height: 150px;
+    width: $porcentajes+98%;
+    height: height(75px);
     background: $bg-lg;
-}
-.logo{
-    padding-top:($pt+8) ;
-    float:right;
+
+  .logo{
+    padding-top: $p+8 ;
+    
+    @include floatR;
   }
+  .ies{
+    padding-top: $p+20 ;
+    color:white;
+    padding-left: $p+15 ;
+  }
+}
+
+.clearfix{
+  display: flex;
+  width: $porcentajes+98%;
+  .columnMenu{
+    margin-left:-40px;
+    width: $porcentajes+18%;
+    li{
+      @include li;
+      padding: $porcentajes;
+      margin-bottom: $porcentajes;
+      //Pseudo clase
+      &:hover{
+        background: rgb(0, 82, 0);
+      }
+      //Pseudo elemento
+      &::first-letter{
+        color:goldenrod;
+        font-size: x-large;
+      }
+    }
+  }
+}
+
+.columnContent{
+
+  margin-left:$porcentajes+3% ;
+  width: $porcentajes+68%;
+  font-size: $fontS;
+
+}
+.columnNews{
+  @include floatR;
+  border:5px solid green;
+  width: $porcentajes+18%;
+  height: height(90px);
+  margin:1%;
+  align-content: center;
+  font-size: $fontS;
+  }
+  .footer{
+    padding: $porcentajes;
+    width: $porcentajes+94%;
+    background: radial-gradient(green 5%,rgb(24, 209, 24) 30%,greenyellow 60%);
+    height: height(30px);
+
+    .copyLeft{
+      @include floatR;
+  }
+}

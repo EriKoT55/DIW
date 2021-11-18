@@ -1,13 +1,77 @@
-@charset "UTF-8";
-/*el sass debe contener al menos 4 variables, 1 pseudo-clase, 
-1 pseudo-elemento, 2 mixins, 2 directivas de medios y 1 función*/
+/*el sass debe contener al menos 
+ 2 media*/
+/*COMANDO PARA COMPILAR DE SCSS A CSS*/
+/*LINK PARA COMPRENDER MEJOR ESTO DE SCSS*/
+/*https://www.w3schools.com/sass/sass_intro.php*/
+@media only screen and (min-width: 600px) {
+  .menu {
+    width: 25%; }
+
+  .content {
+    width: 75%; }
+
+  .news {
+    width: 100%; } }
+@media only screen and (min-width: 600px) {
+  .menu {
+    width: 25%; }
+
+  .content {
+    width: 50%; }
+
+  .news {
+    width: 25%; } }
 .header {
   width: 100%;
   height: 150px;
   background: linear-gradient(#48ff00, #ddff00); }
+  .header .logo {
+    padding-top: 8px;
+    float: right; }
+  .header .ies {
+    padding-top: 20px;
+    color: white;
+    padding-left: 15px; }
 
-.logo {
-  padding-top: 8px;
-  float: right; }
+.clearfix {
+  display: flex;
+  width: 100%; }
+  .clearfix .columnMenu {
+    margin-left: -40px;
+    width: 20%; }
+    .clearfix .columnMenu li {
+      color: white;
+      list-style: none;
+      font-size: medium;
+      background: green;
+      padding: 2%;
+      margin-bottom: 2%; }
+      .clearfix .columnMenu li:hover {
+        background: #005200; }
+      .clearfix .columnMenu li::first-letter {
+        color: goldenrod;
+        font-size: x-large; }
 
+.columnContent {
+  margin-left: 5%;
+  width: 70%;
+  font-size: large; }
 
+.columnNews {
+  float: right;
+  border: 5px solid green;
+  width: 20%;
+  height: 180px;
+  margin: 1%;
+  align-content: center;
+  font-size: large; }
+
+.footer {
+  padding: 2%;
+  width: 96%;
+  background: radial-gradient(green 5%, #18d118 30%, greenyellow 60%);
+  height: 60px; }
+  .footer .copyLeft {
+    float: right; }
+
+/*# sourceMappingURL=SonfeGradient.css.map */
