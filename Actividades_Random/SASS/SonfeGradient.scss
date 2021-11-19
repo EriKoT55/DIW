@@ -38,13 +38,13 @@ $fontS:large;
 
 //Función
 @function height($num){
-  @return $num*2;
+  @return $num*10;
 }
 
 //SCSS
 .header {
     width: 100%;
-    height: height(75px);
+    height: height(15px);
     background: $bg-lg;
     margin-bottom: 10px;
   .logo{
@@ -100,7 +100,7 @@ $fontS:large;
     padding: $porcentajes;
     width: $porcentajes+94%;
     background: radial-gradient(green 5%,rgb(24, 209, 24) 30%,greenyellow 60%);
-    height: height(30px);
+    height: height(6px);
     margin-top: 5px;  
     .copyLeft{
       @include floatR;
@@ -143,7 +143,7 @@ $fontS:large;
    }
    .news {
      width: 35%;
-     height: 190px;
+     height: height(19px);
    }
 
  }

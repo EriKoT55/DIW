@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*COMANDO PARA COMPILAR DE SCSS A CSS*/
 /*LINK PARA COMPRENDER MEJOR SCSS*/
 /*https://www.w3schools.com/sass/sass_intro.php*/
@@ -62,6 +63,9 @@
   width: 98%; }
 
 @media only screen and (min-width: 650px) {
+  /*Este sera el ancho de las clases mientras el ancho de la pantalla no baje de 600px de tamaño,
+    cuadno la resolución minima pasa de 968px de ancho a 650px, se pone en "modo móvil",
+    aplicando los tamaños indicados anteriormente*/
   .menu {
     width: 30%; }
 
@@ -71,6 +75,8 @@
   .news {
     width: 99%; } }
 @media only screen and (min-width: 968px) {
+  /*Este sera el ancho de las clases mientras el ancho de la pantalla no baje de 968px de tamaño,
+  cuadno la resolución minima baja de los 968px de ancho, se pone en "modo tablet"*/
   .menu {
     width: 25%; }
 
