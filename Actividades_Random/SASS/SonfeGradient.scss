@@ -1,10 +1,9 @@
-/*el sass debe contener al menos 
- 2 media*/
+
 
     /*COMANDO PARA COMPILAR DE SCSS A CSS*/
 // sass SonfeGradient.scss SonfeGradient.css
 
-  /*LINK PARA COMPRENDER MEJOR ESTO DE SCSS*/
+  /*LINK PARA COMPRENDER MEJOR SCSS*/
 /*https://www.w3schools.com/sass/sass_intro.php*/
 
 //********************Variables*************************
@@ -35,12 +34,9 @@ $fontS:large;
 }
 
 //Media
+/*Esta abajo*/
 
-
-
-
-
-//Funcion
+//Función
 @function height($num){
   @return $num*2;
 }
@@ -110,6 +106,9 @@ $fontS:large;
       @include floatR;
   }
 }
+
+// Media
+
 .menu{
   width: 100%;
 }
@@ -118,6 +117,7 @@ $fontS:large;
 }
 
 @media only screen and (min-width: 650px) {
+
   .menu {
     width: 30%;
   }
@@ -140,4 +140,5 @@ $fontS:large;
      width: 35%;
      height: 190px;
    }
+
  }
