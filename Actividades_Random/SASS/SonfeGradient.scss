@@ -117,8 +117,9 @@ $fontS:large;
 }
 
 @media only screen and (min-width: 650px) { //Modo tablet
-/*Este sera el ancho de las clases mientras el ancho de la pantalla no baje de 600px de tamaño,
-  cuadno la resolución minima pasa de 968px de ancho a 650px, se pone en "modo móvil",
+
+  /*Este sera el ancho de las clases mientras el ancho de la pantalla no baje de 600px de tamaño,
+  cuadno la resolución minima pasa de 968px de ancho a 600px, se pone en "modo móvil",
   aplicando los tamaños indicados anteriormente*/
   .menu {
     width: 30%;
