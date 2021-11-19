@@ -1,8 +1,7 @@
-/*el sass debe contener al menos 
- 2 media*/
 /*COMANDO PARA COMPILAR DE SCSS A CSS*/
-/*LINK PARA COMPRENDER MEJOR ESTO DE SCSS*/
+/*LINK PARA COMPRENDER MEJOR SCSS*/
 /*https://www.w3schools.com/sass/sass_intro.php*/
+/*Esta abajo*/
 .header {
   width: 100%;
   height: 150px;
