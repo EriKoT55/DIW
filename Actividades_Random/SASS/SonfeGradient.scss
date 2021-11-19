@@ -34,30 +34,11 @@ $fontS:large;
   float:right;
 }
 
-//Media(TERMINAR EN CASA)
-@media only screen and (min-width: 600px) {
-  .menu {
-    width: 25%;
-  }
-  .content {
-    width: 75%;
-  }
-  .news {
-    width: 100%;
-  }
-}
+//Media
 
-@media only screen and (min-width: 600px) {
-  .menu {
-    width: 25%;
-  }
-  .content {
-    width: 50%;
-  }
-  .news {
-    width: 25%;
-  }
-}
+
+
+
 
 //Funcion
 @function height($num){
@@ -66,10 +47,10 @@ $fontS:large;
 
 //SCSS
 .header {
-    width: $porcentajes+98%;
+    width: 100%;
     height: height(75px);
     background: $bg-lg;
-
+    margin-bottom: 10px;
   .logo{
     padding-top: $p+8 ;
     
@@ -83,15 +64,18 @@ $fontS:large;
 }
 
 .clearfix{
-  display: flex;
-  width: $porcentajes+98%;
-  .columnMenu{
-    margin-left:-40px;
-    width: $porcentajes+18%;
+  display: table;
+  width: 100%;
+  .menu{
+    float:left;
+    
+    ul{
+      margin:0px;
+      padding:0px;
     li{
       @include li;
-      padding: $porcentajes;
-      margin-bottom: $porcentajes;
+      padding:15px;
+      margin: 5px;
       //Pseudo clase
       &:hover{
         background: rgb(0, 82, 0);
@@ -101,33 +85,59 @@ $fontS:large;
         color:goldenrod;
         font-size: x-large;
       }
+    } 
     }
   }
 }
-
-.columnContent{
-
-  margin-left:$porcentajes+3% ;
-  width: $porcentajes+68%;
-  font-size: $fontS;
-
+.column{
+ float:left;
 }
-.columnNews{
+
+.news{
   @include floatR;
+  text-align: center;
   border:5px solid green;
-  width: $porcentajes+18%;
-  height: height(90px);
-  margin:1%;
-  align-content: center;
   font-size: $fontS;
+  margin-top: 10px;
   }
   .footer{
     padding: $porcentajes;
     width: $porcentajes+94%;
     background: radial-gradient(green 5%,rgb(24, 209, 24) 30%,greenyellow 60%);
     height: height(30px);
-
+    margin-top: 5px;  
     .copyLeft{
       @include floatR;
   }
 }
+.menu{
+  width: 100%;
+}
+.news{
+  width: 98%;
+}
+
+@media only screen and (min-width: 650px) {
+  .menu {
+    width: 30%;
+  }
+  .content {
+    width: 70%;
+  }
+  .news {
+    width: 99%;
+  }
+}
+
+@media only screen and (min-width: 968px) {
+  .menu {
+     width: 25%;
+   }
+   .content {
+     width: 35%;
+   }
+   .news {
+     width: 35%;
+     height: 190px;
+   }
+ }

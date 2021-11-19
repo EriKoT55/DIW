@@ -3,28 +3,11 @@
 /*COMANDO PARA COMPILAR DE SCSS A CSS*/
 /*LINK PARA COMPRENDER MEJOR ESTO DE SCSS*/
 /*https://www.w3schools.com/sass/sass_intro.php*/
-@media only screen and (min-width: 600px) {
-  .menu {
-    width: 25%; }
-
-  .content {
-    width: 75%; }
-
-  .news {
-    width: 100%; } }
-@media only screen and (min-width: 600px) {
-  .menu {
-    width: 25%; }
-
-  .content {
-    width: 50%; }
-
-  .news {
-    width: 25%; } }
 .header {
   width: 100%;
   height: 150px;
-  background: linear-gradient(#48ff00, #ddff00); }
+  background: linear-gradient(#48ff00, #ddff00);
+  margin-bottom: 10px; }
   .header .logo {
     padding-top: 8px;
     float: right; }
@@ -34,44 +17,69 @@
     padding-left: 15px; }
 
 .clearfix {
-  display: flex;
+  display: table;
   width: 100%; }
-  .clearfix .columnMenu {
-    margin-left: -40px;
-    width: 20%; }
-    .clearfix .columnMenu li {
-      color: white;
-      list-style: none;
-      font-size: medium;
-      background: green;
-      padding: 2%;
-      margin-bottom: 2%; }
-      .clearfix .columnMenu li:hover {
-        background: #005200; }
-      .clearfix .columnMenu li::first-letter {
-        color: goldenrod;
-        font-size: x-large; }
+  .clearfix .menu {
+    float: left; }
+    .clearfix .menu ul {
+      margin: 0px;
+      padding: 0px; }
+      .clearfix .menu ul li {
+        color: white;
+        list-style: none;
+        font-size: medium;
+        background: green;
+        padding: 15px;
+        margin: 5px; }
+        .clearfix .menu ul li:hover {
+          background: #005200; }
+        .clearfix .menu ul li::first-letter {
+          color: goldenrod;
+          font-size: x-large; }
 
-.columnContent {
-  margin-left: 5%;
-  width: 70%;
-  font-size: large; }
+.column {
+  float: left; }
 
-.columnNews {
+.news {
   float: right;
+  text-align: center;
   border: 5px solid green;
-  width: 20%;
-  height: 180px;
-  margin: 1%;
-  align-content: center;
-  font-size: large; }
+  font-size: large;
+  margin-top: 10px; }
 
 .footer {
   padding: 2%;
   width: 96%;
   background: radial-gradient(green 5%, #18d118 30%, greenyellow 60%);
-  height: 60px; }
+  height: 60px;
+  margin-top: 5px; }
   .footer .copyLeft {
     float: right; }
+
+.menu {
+  width: 100%; }
+
+.news {
+  width: 98%; }
+
+@media only screen and (min-width: 650px) {
+  .menu {
+    width: 30%; }
+
+  .content {
+    width: 70%; }
+
+  .news {
+    width: 99%; } }
+@media only screen and (min-width: 968px) {
+  .menu {
+    width: 25%; }
+
+  .content {
+    width: 35%; }
+
+  .news {
+    width: 35%;
+    height: 190px; } }
 
 /*# sourceMappingURL=SonfeGradient.css.map */
