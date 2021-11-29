@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <link type="text/css" rel="stylesheet" href="audio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div>
+        <audio id="player">
+            <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/ogg" />
+            <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/mpeg" />
+        </audio>
+        <img class="play" src="img/play.png" onClick="document.getElementById('player').play()"></img>
+        <img class="stop" src="img/stop.png" onClick="document.getElementById('player').pause()"></img>
+        <!--NO FUNCIONAN LOS BOTONES DE PARA SUBIR Y BAJAR-->
+        <img class="subirVol"src="img/subirVol.png" onClick="document.getElementById('player').volume+=0.2"></img>
+        <img class="bajarVol" src="img/bajarVol.png" onClick="document.getElementById('player').volume-=0.2"></img>
+        
+    </div>
+</body>
+</html>

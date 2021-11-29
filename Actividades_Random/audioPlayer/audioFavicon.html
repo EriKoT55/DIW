@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <link type="text/css" rel="stylesheet" href="audio.css">
+    <link rel="icon" type="image/x-icon" href="img/narj.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div>
+        <audio id="player">
+            <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/ogg" />
+            <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/mpeg" />
+        </audio>
+        <i class="fa fa-play" onClick="document.getElementById('player').play()"></i>
+        <i class="fa fa-stop"  onClick="document.getElementById('player').pause()"></i>
+       
+        <i class="fa fa-plus-square" onClick="document.getElementById('player').volume+=0.2"></i>
+        <i class="fa fa-minus-square"  onClick="document.getElementById('player').volume-=0.2"></i>
+        
+    </div>
+</body>
+</html>
