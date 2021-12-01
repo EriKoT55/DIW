@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+    <div>
+        <audio id="player">
+            <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/ogg" />
+            <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/mpeg" />
+        </audio>
+        <img class="play" src="img/play.png" onClick="document.getElementById('player').play()"></img>
+        <img class="stop" src="img/stop.png" onClick="document.getElementById('player').pause()"></img>
+        <script type="text/javaScript" src="javaScript.js"></script>
+       <!----> <img class="next" src="img/next.png" onClick="document.getElementById('player').next()"></img>
+        <!----><img class="random" src="img/random.png" onClick="document.getElementById('player').pause()"></img>
+        
+        <img class="subirVol"src="img/subirVol.png" onClick="document.getElementById('player').volume+=0.2"></img>
+        <img class="bajarVol" src="img/bajarVol.png" onClick="document.getElementById('player').volume-=0.2"></img>
+        
+    </div>
+</body>
+</html>
