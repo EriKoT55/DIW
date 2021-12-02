@@ -8,14 +8,16 @@
     <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
+    
     <div>
+        <!--https://stackoverflow.com/questions/27368778/how-to-toggle-audio-play-pause-with-one-button-or-link-->
         <audio id="player">
             <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/ogg" />
             <source src="XXXTENTACION_YuNg_BrAtZ_Audio.mp3" type="audio/mpeg" />
         </audio>
-        <img class="play" src="img/play.png" onClick="document.getElementById('player').play()"></img>
-        <img class="stop" src="img/stop.png" onClick="document.getElementById('player').pause()"></img>
-        <script type="text/javaScript" src="javaScript.js"></script>
+        <img id="play" src="img/play.png" onclick="play_parar()"></img>
+        <img id="stop" src="img/stop.png" onClick="stop()"></img>
+        
        <!----> <img class="next" src="img/next.png" onClick="document.getElementById('player').next()"></img>
         <!----><img class="random" src="img/random.png" onClick="document.getElementById('player').pause()"></img>
         
@@ -23,5 +25,6 @@
         <img class="bajarVol" src="img/bajarVol.png" onClick="document.getElementById('player').volume-=0.2"></img>
         
     </div>
+    <script type="text/javascript" src="javaScript.js"></script>
 </body>
 </html>
