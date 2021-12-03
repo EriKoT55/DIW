@@ -14,9 +14,7 @@ function play_parar(){
 function stop(){
     let stop=document.getElementById("player");
 
-    if(stop.paused){
-       
-    }else{
+    if(!stop.paused){
         stop.pause();
         stop.currentTime=0;
     }
