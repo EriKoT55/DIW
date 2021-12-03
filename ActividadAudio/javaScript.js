@@ -22,3 +22,22 @@ function stop(){
     }
 
 }
+
+function nombre_cancion(){
+    
+}
+
+function next(){
+let songs=["WOS_LLENO_DE_ZAFIROS.wav","XXXTENTACION.mp3","Voz.m4a","DUKI_Rockstar.ogg"];
+let contador=0;
+let seguir=false;
+    contador++;
+
+
+    if(contador==songs.length){
+        contador=0;
+    }
+    songs.src="songs/"+songs[contador];
+    seguir ? songs.play() : "";
+
+}
