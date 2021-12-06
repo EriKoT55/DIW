@@ -9,23 +9,30 @@
 </head>
 <body>
     
-    <div>
+    
         <!--https://stackoverflow.com/questions/27368778/how-to-toggle-audio-play-pause-with-one-button-or-link-->
-       <h3 id="nombreCancion">nada</h3>
-        <audio id="player">
-            <source src="DUKI_Rockstar.ogg" type="audio/mp3">
+      <div>
+        <audio id="player" onended="Next()">
+            <source src="canciones/DUKI_Rockstar.ogg" type="audio/mp3">
         </audio>
-        <img class="next" src="img/atras.png" onClick="document.getElementById('player').next()"></img>
-        <img id="play" src="img/play.png" onclick="play_parar()"></img>
-        <img id="stop" src="img/stop.png" onClick="stop()"></img>
+
+        <img id="img" src="https://i.scdn.co/image/ab67616d0000b273b3953863e4455d10e8f8966d">
+
+        <h4 id="nombreCancion"></h4>
+        <span id="currentTime" class="time">0:00</span>
+        <input type="range" id="slider" max="100" min="0">
+        <span id="duracion" class="time">0:00</span>
+        <br>
+        <img id="previous" src="img/atras.png" onclick="Previous()">
+        <img id="play" src="img/play.png" onclick="Play_parar()">
+        <img id="stop" src="img/stop.png" onclick="Stop()">
+        <img id="next" src="img/next.png" onclick="Next()">
+        <img id="random" src="img/random.png" onclick="Random()">
         
-       <!----> <img class="next" src="img/next.png" onClick="document.getElementById('player').next()"></img>
-        <!----><img class="random" src="img/random.png" onClick="document.getElementById('player').pause()"></img>
+        <img id="subirVol"src="img/subirVol.png" onClick="document.getElementById('player').volume+=0.1">
+        <img id="bajarVol" src="img/bajarVol.png" onClick="document.getElementById('player').volume-=0.1">
         
-        <img class="subirVol"src="img/subirVol.png" onClick="document.getElementById('player').volume+=0.2"></img>
-        <img class="bajarVol" src="img/bajarVol.png" onClick="document.getElementById('player').volume-=0.2"></img>
-        
-    </div>
+       </div>  
     <script type="text/javascript" src="javaScript.js"></script>
 </body>
 </html>

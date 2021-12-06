@@ -1,3 +1,11 @@
+div{
+    text-align: center;
+}
+#img{
+    width: 155px;
+    height: 120px;
+}
+
 img{
-    width: 75px;
+    width: 55px;
 }
