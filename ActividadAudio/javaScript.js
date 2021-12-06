@@ -1,5 +1,6 @@
 //Arrays
 var canciones=["DUKI_Rockstar.ogg","Voz.m4a","WOS_LLENO_DE_ZAFIROS.wav","XXXTENTACION.mp3"];
+var nomCancion=["Duki: Rockstar", " Mi Voz", "Wos: Lleno de zafiros", "XXXTENTACION"];//No me dio tiempo a meterlo
 var cancionesIMG=["https://i.scdn.co/image/ab67616d0000b273b3953863e4455d10e8f8966d","Voz_Audio_Erik.png","https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/c/0/6/e/1193901637322112.jpg","https://m.media-amazon.com/images/I/51i7IrTwb4L._AC_SY741_.jpg"];
 //Elementos
 var audio=document.getElementById("player");
@@ -92,26 +93,33 @@ function Random(){
     let aux;
     if(random==false){
 
-        for(let i=canciones.length -1;i>0;i--){
-            r = Math.floor(Math.random*(i+1));
-
+        for(let i=0; i <= canciones.length - 1; i++ ){
+            r = Math.floor(Math.random() * (i + 0) + 0 );
             aux=canciones[i];
             canciones[i]=canciones[r]
             canciones[r]=aux;
+
+            aux=cancionesIMG[i];
+            cancionesIMG[i]=cancionesIMG[r];
+            cancionesIMG[r] = aux;
             random=true;
             document.getElementById("random").src="img/random.png";
         }
 
     }else{
-       
+
         random=false;
         canciones=["DUKI_Rockstar.ogg","Voz.m4a","WOS_LLENO_DE_ZAFIROS.wav","XXXTENTACION.mp3"];
+        cancionesIMG=["https://i.scdn.co/image/ab67616d0000b273b3953863e4455d10e8f8966d","Voz_Audio_Erik.png","https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/c/0/6/e/1193901637322112.jpg","https://m.media-amazon.com/images/I/51i7IrTwb4L._AC_SY741_.jpg"];
+        document.getElementById("img").src=cancionesIMG[0]
         document.getElementById.src="img/random.png";
 
     }
-    
+
     if(seguir!=true){
+        document.getElementById("img").src=cancionesIMG[0]
         audio.src="canciones/"+canciones[contador];
+        audio.load();
         audio.play();
     }
 Nombres_canciones;
