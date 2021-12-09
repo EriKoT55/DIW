@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike</title>
+</head>
+<body>
+    <canvas id='myCanv' width="900" height="500" ></canvas>
+    <script>
+
+        const mywidth="1000px";
+        const myheight="500px";
+        var canvas = document.getElementById("myCanv");
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        
+        context.moveTo(440, 80);
+        //mid point x,y, midpoing2 x,y , end point
+        context.bezierCurveTo(350, 150,400, 160, 610, 75);
+        context.lineWidth = 5;
+        context.fill();
+
+        context.beginPath();
+       //deberia haber aqui algo que cambie el color
+        context.moveTo(510, -750);
+        //mid point x,y, midpoing2 x,y , end point
+        context.bezierCurveTo(350, 170,420, 155, 595, 75);
+        context.fillStyle="#ffffff";
+        context.fill();
+    </script>
+</body>
+</html>
