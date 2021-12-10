@@ -14,7 +14,7 @@ and open the template in the editor.
         <input id="text" type="text">
         <button onclick="init()">Animation</button>
         <br>
-        <canvas id="canvas" width = "800" height = "800"></canvas>
+        <canvas id="canvas" width ="800" height ="800"></canvas>
         <script>
             var text;
             var canvas;
@@ -28,7 +28,6 @@ and open the template in the editor.
                 text = document.getElementById("text").value;
                 canvas = document.getElementById("canvas");
                 ctx = canvas.getContext("2d");
-
 
                 setInterval(animation, 30);
             }
