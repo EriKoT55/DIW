@@ -5,33 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RotaRota</title>
 </head>
 
 <body>
-    <form>
-        <input type="text" id="fname" name="fname">
-        <input type="submit" onclick="pepe()" value="Submit">
-    </form>
-    <canvas id='myCanv' width="100" height="100" style="border: 2px solid black;"></canvas>
+
+    <input type="text" id="txt">
+    <button onclick="recogerPalabra()">Animacion</button>
+
+    <canvas id='myCanv' width="800" height="800"></canvas>
     <script>
-        function x() {
-            let vari = document.getElementById("fname").value;
-            document.write(vari);
+        const velVuelta = 2;
+        const angulo = 100;
+        var canvas;
+        var txt;
+        var context;
+        var i = 0;
+        
+        function recogerPalabra() {
+            txt = document.getElementById("txt").value;
+            canvas = document.getElementById("myCanv");
+            context = canvas.getContext("2d");
 
-            const mywidth = "1000px";
-            const myheight = "500px";
-            var canvas = document.getElementById("myCanv");
-            var context = canvas.getContext("2d");
+            //Con setInterval hago que se haga la funcion en un intervalo de 30 milisegundos
+            setInterval(animacion, 30);
+        }           
+        function animacion() {
+            
 
-
+            context.clearRect(0, 0, canvas.width, canvas.height);
             context.save();
-            context.translate()
+            //Mueve la palabra aleatoriamente en por el espacio dado
+            context.translate(300+velVuelta*Math.random(), 300+velVuelta*Math.random());
+            context.rotate(Math.PI * (i++/angulo));
             context.font = '17pt Arial';
             context.textAlign = "center";
-            context.fillText(vari, 420, 100);
-            //context.rotate(Math.PI*"/2");
-        }
+            context.fillStyle = 'orange';
+
+            context.fillText(txt, 0, 0);
+            context.restore();
+        } 
     </script>
 </body>
 
