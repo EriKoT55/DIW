@@ -17,7 +17,7 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 
 -->
 <html lang="en">
-
+<!--Programar game over JS-- VIDEO -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,6 +72,8 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         var entreLadrillosTop = 30;
         var entreLadrillosIzq = 30;
 
+        //Puntuacion
+        var puntuacion = 0;
 
 
         var ladrillos = [];
@@ -79,13 +81,18 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         for (col = 0; col < ladrilloColumnas; col++) {
             ladrillos[col] = [];
             for (fila = 0; fila < ladrilloFilas; fila++) {
-                ladrillos[col][fila] = { x: 0,y: 0 };
+                ladrillos[col][fila] = {
+                    x: 0,
+                    y: 0,
+                    status:1
+                };
             }
         }
 
         //Estos dos event listener cogeran cuando presione o no presione las teclas
         document.addEventListener("keyup", SinPresionar, false);
         document.addEventListener("keydown", Presionada, false);
+
 
         function SinPresionar(tecla) {
             if (tecla.keyCode == 39) {
@@ -104,6 +111,36 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             }
         }
 
+        //funcion que nos dibuja la puntuacion
+        function crearPuntuacion(){
+
+            context.font=" 18px Arial";
+            context.fillStyle="black";
+            context.fillText("Puntuacion: "+puntuacion,8,20);
+        }
+
+        //funcion la cual detecta la colision de la pelota contra el ladrillo
+        function deteccionColisiones() {
+             
+            for (col = 0; col < ladrilloColumnas; col++) {
+                for (fila=0; fila < ladrilloFilas; fila++) {
+                    var l = ladrillos[col][fila];
+                    if(l.status==1){
+                    if (x > l.x && x < l.x + ladrilloAncho && y > l.y && y < l.y + ladrilloAltura) {
+                        dy = -dy;
+                        l.status=0;
+                        puntuacion++;
+                        if(puntuacion==ladrilloColumnas*ladrilloFilas){
+                            alert("Has ganado en un juego de mieda ENHORABUENA!!!!");
+                            document.location.reload();
+                        }
+                    }
+                }
+                }
+
+            }
+
+        }
 
         //funcion la cual nos creara la bola
         function crearBall() {
@@ -114,8 +151,13 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             context.fill();
             context.closePath();
 
+            if (x + dx > canvas.width - radioBall || x + dx < radioBall) {
+                dx = -dx;
+            }
+            if (y + dy < radioBall) {
+                dy = -dy;
+            }
         }
-
         //funcion la cual nos crea el rectangulo
         function crearRect() {
             context.beginPath();
@@ -127,35 +169,36 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         }
 
         //funcion la cual nos crea los ladrillos
-        function crearLadrillos(){
-
+        function crearLadrillos() {
+            
             for (col = 0; col < ladrilloColumnas; col++) {
-              for (fila = 0; fila < ladrilloFilas; fila++) {
-                  var ladrilloX=(col*(ladrilloAncho+ladrilloPadding))+entreLadrillosIzq;
-                  var ladrilloY=(fila*(ladrilloAltura+ladrilloPadding))+entreLadrillosTop;
-                ladrillos[col][fila].x= 0;
-                ladrillos[col][fila].y= 0;
-                context.beginPath();
-                context.rect(ladrilloX,ladrilloY,ladrilloAncho,ladrilloAltura);
-                context.fillStyle="orange";
-                context.fill();
-                context.closePath();
-              }
+                for (fila = 0; fila < ladrilloFilas; fila++) {
+                    if(ladrillos[col][fila].status==1){
+                    var ladrilloX = (col * (ladrilloAncho + ladrilloPadding)) + entreLadrillosIzq;
+                    var ladrilloY = (fila * (ladrilloAltura + ladrilloPadding)) + entreLadrillosTop;
+                    ladrillos[col][fila].x = ladrilloX;
+                    ladrillos[col][fila].y = ladrilloY;
+                    context.beginPath();
+                    context.rect(ladrilloX, ladrilloY, ladrilloAncho, ladrilloAltura);
+                    context.fillStyle = "orange";
+                    context.fill();
+                    context.closePath();
+                    }
+                }
             }
 
         }
-//https://developer.mozilla.org/es/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
-        function deteccionColisiones(){
 
-        }
 
         //funcion la cual nos movera la bola
         function mover() {
             context.clearRect(0, 0, canvas.width, canvas.height);
-
+            
             crearBall();
             crearRect();
-            crearLadrillos()
+            crearLadrillos();
+            deteccionColisiones();
+            crearPuntuacion();
 
             //Condicion la cual permite que la bola rebote al llegar a las paredes
             if (x + dx > canvas.width - radioBall || x + dx < radioBall) {
@@ -164,14 +207,22 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             if (y + dy < radioBall) {
                 dy = -dy;
 
-                //Condicion la cual hace que si toca la parte inferior se acabe el juego
-                // y aparte si toca el rectangulo rebota
+            //Condicion la cual hace que si toca la parte inferior se acabe el juego
+            // y aparte si toca el rectangulo rebota
             } else if (y + dy > canvas.height - radioBall) {
-                if (x > rectX && x < rectX + rectAncho) {
+                if (x >= rectX && x <= rectX + rectAncho) {
                     dy = -dy;
                 } else {
-                    alert("GAME OVER");
-                   document.location.reload();
+                    confirm("GAME OVER");
+                    if (confirm == true) {
+                        crearBall();
+                        crearRect();
+                        crearLadrillos();
+                        //puntuacion=0;
+                    }else{
+                        //mirar como se puede poner la pantalla en blanco
+                    }
+
                 }
             }
 
