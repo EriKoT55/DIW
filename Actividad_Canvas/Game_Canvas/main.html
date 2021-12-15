@@ -34,7 +34,7 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 <!--https://developer.mozilla.org/es/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript-->
 
 <body>
-    <canvas id="canvas" width="930" height="400"></canvas>
+    <canvas id="canvas" width="440" height="400"></canvas>
 
     <script>
         var canvas = document.getElementById("canvas");
@@ -51,20 +51,41 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         var radioBall = 10;
 
         //Tamaño del rectangulo
-        var rectAlto = 30;
+        var rectAlto = 10;
         var rectAncho = 75;
 
         //Posicion por el eje X
-        var rectX = (canvas.width - rectAncho / 2);
+        var rectX = (canvas.width - rectAncho) / 2;
 
         //Teclas
         var der = false;
         var izq = false;
 
+        //Ladrillo
+        var ladrilloAncho = 75;
+        var ladrilloAltura = 20;
+
+        //Propiedades bloque de ladrillos 
+        var ladrilloFilas = 3;
+        var ladrilloColumnas = 5;
+        var ladrilloPadding = 10;
+        var entreLadrillosTop = 30;
+        var entreLadrillosIzq = 30;
+
+
+
+        var ladrillos = [];
+
+        for (col = 0; col < ladrilloColumnas; col++) {
+            ladrillos[col] = [];
+            for (fila = 0; fila < ladrilloFilas; fila++) {
+                ladrillos[col][fila] = { x: 0,y: 0 };
+            }
+        }
 
         //Estos dos event listener cogeran cuando presione o no presione las teclas
-        document.addEventListener("keydown", SinPresionar, false);
-        document.addEventListener("keyup", Presionada, false);
+        document.addEventListener("keyup", SinPresionar, false);
+        document.addEventListener("keydown", Presionada, false);
 
         function SinPresionar(tecla) {
             if (tecla.keyCode == 39) {
@@ -74,13 +95,15 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             }
         }
 
+
         function Presionada(tecla) {
             if (tecla.keyCode == 39) {
-                der == true;
+                der = true;
             } else if (tecla.keyCode == 37) {
                 izq = true;
             }
         }
+
 
         //funcion la cual nos creara la bola
         function crearBall() {
@@ -97,10 +120,33 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         function crearRect() {
             context.beginPath();
             //Dibuja el rectangulo a lo largo del eje X
-            context.rect(rectX, canvas.height - rectAlto, rectAlto, rectAncho);
+            context.rect(rectX, canvas.height - rectAlto, rectAncho, rectAlto);
             context.fillStyle = "orange";
             context.fill();
             context.closePath();
+        }
+
+        //funcion la cual nos crea los ladrillos
+        function crearLadrillos(){
+
+            for (col = 0; col < ladrilloColumnas; col++) {
+              for (fila = 0; fila < ladrilloFilas; fila++) {
+                  var ladrilloX=(col*(ladrilloAncho+ladrilloPadding))+entreLadrillosIzq;
+                  var ladrilloY=(fila*(ladrilloAltura+ladrilloPadding))+entreLadrillosTop;
+                ladrillos[col][fila].x= 0;
+                ladrillos[col][fila].y= 0;
+                context.beginPath();
+                context.rect(ladrilloX,ladrilloY,ladrilloAncho,ladrilloAltura);
+                context.fillStyle="orange";
+                context.fill();
+                context.closePath();
+              }
+            }
+
+        }
+
+        function deteccionColisiones(){
+            
         }
 
         //funcion la cual nos movera la bola
@@ -109,24 +155,36 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 
             crearBall();
             crearRect();
+            crearLadrillos()
 
             //Condicion la cual permite que la bola rebote al llegar a las paredes
             if (x + dx > canvas.width - radioBall || x + dx < radioBall) {
                 dx = -dx;
             }
-            if (y + dy > canvas.height - radioBall || y + dy < radioBall) {
-                dy = -dy
+            if (y + dy < radioBall) {
+                dy = -dy;
+
+                //Condicion la cual hace que si toca la parte inferior se acabe el juego
+                // y aparte si toca el rectangulo rebota
+            } else if (y + dy > canvas.height - radioBall) {
+                if (x > rectX && x < rectX + rectAncho) {
+                    dy = -dy;
+                } else {
+                    alert("GAME OVER");
+                   document.location.reload();
+                }
             }
 
+            //Condicion la cual mueve el rectangulo
             if (der && rectX < canvas.width - rectAncho) {
-                rectX += 7
-            } else if (izq && rectX > 0)  {
+                rectX += 7;
+            } else if (izq && rectX > 0) {
                 rectX -= 7;
             }
 
             x += dx;
             y += dy;
-           
+
         }
 
         // Hace un intervalo de la funcion pasada por parametro a los milisegundos puestos
