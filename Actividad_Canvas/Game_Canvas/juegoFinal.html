@@ -98,7 +98,7 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 
         //Puntuacion
         var puntuacion = 0;
-        var puntuacion2=0;
+        var puntuacion2 = 0;
         //vidas
         var vidas = 3;
         var vidas2 = 3;
@@ -219,31 +219,35 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                             dy = -dy;
                             l.status = 0;
                             puntuacion++;
-                            if (puntuacion == ladrilloColumnas * ladrilloFilas) {
-                                alert("Has ganado ENHORABUENA!!!!");
-                                document.getElementById("menu").style.display = ""
-                                document.getElementById("canvas").style.display = "none";
+                            //Mirar aqui al acabar la partida no muestra el ganador, 
+                            //esto no lo he probado con la condicion status
+                            if (ladrilloColumnas * ladrilloFilas == (l.status=0)) {
+                                if (puntuacion>puntuacion2) {
+                                    alert("Has ganado J1 ENHORABUENA!!!!");
+                                    document.getElementById("menu").style.display = ""
+                                    document.getElementById("canvas").style.display = "none";
 
-                                x = canvas.width / 3;
-                                y = canvas.height - 50;
-                                dx = 3;
-                                dy = -4;
-                                rectX = (canvas.width - rectAncho) / 2;
+                                    x = canvas.width / 3;
+                                    y = canvas.height - 50;
+                                    dx = 3;
+                                    dy = -4;
+                                    rectX = (canvas.width - rectAncho) / 2;
 
-                                if (der && rectX < canvas.width - rectAncho) {
-                                    rectX += 8;
-                                } else if (izq && rectX > 0) {
-                                    rectX -= 8;
+                                    if (der && rectX < canvas.width - rectAncho) {
+                                        rectX += 8;
+                                    } else if (izq && rectX > 0) {
+                                        rectX -= 8;
+                                    }
+
+                                    if (der2 && rectX2 < canvas.width - rectAncho) {
+                                        rectX2 += 8;
+                                    } else if (izq2 && rectX2 > 0) {
+                                        rectX2 -= 8;
+                                    }
+
+                                    document.location.reload();
+
                                 }
-
-                                if (der2 && rectX2 < canvas.width - rectAncho) {
-                                    rectX2 += 8;
-                                } else if (izq2 && rectX2 > 0) {
-                                    rectX2 -= 8;
-                                }
-
-                                document.location.reload();
-
                             }
                         }
                     }
@@ -259,35 +263,39 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                 for (fila = 0; fila < ladrilloFilas; fila++) {
                     var l = ladrillos[col][fila];
                     if (l.status == 1) {
-                        if (x2 >= l.x2 && x2 <= l.x2 + ladrilloAncho && y2 >= l.y2 && y2 <= l.y2 + ladrilloAltura) {
+                        if (x2 >= l.x && x2 <= l.x + ladrilloAncho && y2 >= l.y && y2 <= l.y + ladrilloAltura) {
                             dy2 = -dy2;
                             l.status = 0;
-                            puntuacion++;
-                            if (puntuacion == ladrilloColumnas * ladrilloFilas) {
-                                alert("Has ganado ENHORABUENA!!!!");
-                                document.getElementById("menu").style.display = ""
-                                document.getElementById("canvas").style.display = "none";
+                            puntuacion2++;
+                            //Mirar aqui al acabar la partida no muestra el ganador, 
+                            //esto no lo he probado con la condicion status
+                            if (ladrilloColumnas * ladrilloFilas == (l.status=0)) {
+                                if (puntuacion2 > puntuacion) {
+                                    alert("Has ganado J2 ENHORABUENA!!!!");
+                                    document.getElementById("menu").style.display = ""
+                                    document.getElementById("canvas").style.display = "none";
 
-                                x2 = canvas.width / 3;
-                                y2 = canvas.height - 50;
-                                dx2 = 3;
-                                dy2 = -4;
-                                rectX2 = (canvas.width - rectAncho) / 2;
+                                    x2 = canvas.width / 3;
+                                    y2 = canvas.height - 50;
+                                    dx2 = 3;
+                                    dy2 = -4;
+                                    rectX2 = (canvas.width - rectAncho) / 2;
 
-                                if (der2 && rectX2 < canvas.width - rectAncho) {
-                                    rectX2 += 7;
-                                } else if (izq2 && rectX2 > 0) {
-                                    rectX2 -= 7;
+                                    if (der2 && rectX2 < canvas.width - rectAncho) {
+                                        rectX2 += 7;
+                                    } else if (izq2 && rectX2 > 0) {
+                                        rectX2 -= 7;
+                                    }
+                                    if (der2 && rectX2 < canvas.width - rectAncho) {
+                                        rectX2 += 7;
+                                    } else if (izq2 && rectX2 > 0) {
+                                        rectX2 -= 7;
+                                    }
+
+
+                                    document.location.reload();
+
                                 }
-                                if (der2 && rectX2 < canvas.width - rectAncho) {
-                                    rectX2 += 7;
-                                } else if (izq2 && rectX2 > 0) {
-                                    rectX2 -= 7;
-                                }
-
-
-                                document.location.reload();
-
                             }
                         }
                     }
@@ -420,22 +428,23 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                         rectX = (canvas.width - rectAncho) / 2;
 
                         if (der && rectX < canvas.width - rectAncho) {
-                            rectX += 9;
+                            rectX += 13;
                         } else if (izq && rectX > 0) {
-                            rectX -= 9;
+                            rectX -= 13;
                         }
 
                     } else if (vidas == 1) {
                         x = canvas.width / 3;
                         y = canvas.height - 50;
-                        dx = 6;
-                        dy = -7;
+                        dx = 5;
+                        dy = -6;
+
                         rectX = (canvas.width - rectAncho) / 2;
 
                         if (der && rectX < canvas.width - rectAncho) {
-                            rectX += 13;
+                            rectX += 18;
                         } else if (izq && rectX > 5) {
-                            rectX -= 13;
+                            rectX -= 18;
                         }
 
                     }
@@ -459,7 +468,7 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                     dy2 = -dy2;
                 } else {
                     vidas2--;
-                    if (!vidas) {
+                    if (!vidas2) {
                         alert("GAME OVER Jugador2");
                         document.getElementById("menu").style.display = ""
                         document.getElementById("canvas").style.display = "none";
@@ -476,9 +485,9 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                         rectX2 = (canvas.width - rectAncho) / 2;
 
                         if (der2 && rectX2 < canvas.width - rectAncho) {
-                            rectX2 += 10;
+                            rectX2 += 14;
                         } else if (izq2 && rectX2 > 0) {
-                            rectX2 -= 10;
+                            rectX2 -= 14;
                         }
 
                     } else if (vidas2 == 1) {
@@ -486,14 +495,14 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                         x2 = canvas.width / 3;
                         y2 = canvas.height - 50;
 
-                        dx2 = 9;
-                        dy2 = -9;
+                        dx2 = 5;
+                        dy2 = -6;
                         rectX2 = (canvas.width - rectAncho) / 2;
 
                         if (der2 && rectX2 < canvas.width - rectAncho) {
-                            rectX2 += 13;
+                            rectX2 += 18;
                         } else if (izq2 && rectX2 > 0) {
-                            rectX2 -= 13;
+                            rectX2 -= 18;
                         }
 
                     }
@@ -503,14 +512,14 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 
             //Condicion la cual mueve el rectangulo
             if (der && rectX < canvas.width - rectAncho) {
-                rectX += 7;
+                rectX += 9;
             } else if (izq && rectX > 0) {
-                rectX -= 7;
+                rectX -= 9;
             }
             if (der2 && rectX2 < canvas.width - rectAncho) {
-                rectX2 += 7;
+                rectX2 += 9;
             } else if (izq2 && rectX2 > 0) {
-                rectX2 -= 7;
+                rectX2 -= 9;
             }
             //Aplicamos la velocidad al movimiento de la pelota por lols ejes
             x += dx;
