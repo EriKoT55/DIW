@@ -99,7 +99,7 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         var entreLadrillosTop = 40;
         var entreLadrillosIzq = 30;
 
-        //Obstaculo1 ******Sin acabar*********
+        //Obstaculo1 ********Sin acabar*********
         var obstaculoAnchoIZQ = 60;
         var obstaculoAlturaIZQ = 10;
         var obsX_IZQ = -60;
@@ -111,19 +111,22 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         var obsX_DER = -60;
         var obsY_DER = 180;
 
-        //obstaculo3_2
+        //Obstaculo3_2
         var obstaculoAnchoIZQ2 = 60;
         var obstaculoAlturaIZQ2 = 10;
         var obsX_IZQ2 = -60;
         var obsY_IZQ2 = 200;
-        //obstaculo4_2
+
+        //Obstaculo4_2
         var obstaculoAnchoDER2 = 60;
         var obstaculoAlturaDER2 = 10;
         var obsX_DER2 = -60;
         var obsY_DER2 = 180;
+
         //Puntuacion
         var puntuacion = 0;
         var puntuacion2 = 0;
+
         //vidas
         var vidas = 3;
         var vidas2 = 3;
@@ -154,8 +157,10 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             ladrilloAncho = 115;
             ladrilloAltura = 25;
             entreLadrillosIzq = 150;
-            obsY = 400;
-            obsY2 = 520;
+            obsY_DER2 = 400;
+            obsY_DER = 520;
+            obsY_IZQ= 440;
+            obsY_IZQ2= 470;
             rellenarLadrillos();
         }
 
@@ -304,10 +309,34 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 
         }
 
-        function movObs() {
+        function movObsX_DER() {
 
-            if (obsX > canvas.width) {
+            if (obsX_DER > canvas.width) {
+                obsX_DER = -60;
+            }
 
+        }
+
+        function movObsX_DER2() {
+
+            if (obsX_DER2 > canvas.width) {
+                obsX_DER2 = -60;
+            }
+
+        }
+
+        function movObsX_IZQ() {
+
+            if (obsX_IZQ > canvas.width) {
+                obsX_IZQ = -60;
+            }
+
+        }
+
+        function movObsX_IZQ2() {
+
+            if (obsX_IZQ2 > canvas.width) {
+                obsX_IZQ2 = -60;
             }
 
         }
@@ -511,7 +540,7 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             if (x + dx > canvas.width - radioBall || x + dx < radioBall) {
                 dx = -dx;
             }
-        //Condicion la cual permite que la bola rebote al llegar al TOP de Y
+            //Condicion la cual permite que la bola rebote al llegar al TOP de Y
             if (y + dy < radioBall) {
                 dy = -dy;
                 //Condicion la cual hace que rebote en el rectangulo
