@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <!--
 La estructura del programa debe incluir:
-
 Un componente del cuadrado que puedes mover para jugar (0.5)
 Un componente de la puntuación (1)
 Una función que define el área de bloques donde se puede matar al jugador (incluye la creación de espacios aleatorios al principio y después de x milisegundos) (2)
 Una función que evalúa si ha habido contacto entre los bloques y la casilla del jugador (2)
 Una función que actualiza la posición del cuadrado de acuerdo con su posición anterior, su velocidad y su aceleración (1)
 Una función que comprueba si hemos llegado a la parte inferior o superior del lienzo (0.5)
-
 -----EXTRA------
-
 Puede agregar 4 direcciones en lugar de solo dos (4 controles de teclado, superior, derecha, izquierda e inferior) (1)
 Puedes elegir cómo ganar vida o cómo terminar el juego de forma progresiva (1)
 Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
-
 -->
 <html lang="en">
 <!--Programar game over JS-- VIDEO -->
@@ -37,28 +33,35 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 <body>
     <div class="contenedor">
 
-        <form>
+        <div id="menu">
             <h4>Elija los jugadores</h4>
             <p class="j1">1 jugador</p>
-            <input id="input1" type="checkbox" onclick="" name="jugadores">
+            <input id="input1" type="checkbox" onclick="input1()" name="jugadores">
             <p class="j2">2 jugador</p>
-            <input id="input2" type="checkbox" onclick="" name="jugadores">
-            <button onclick="">START</button>
-        </form>
+            <input id="input2" type="checkbox" onclick="input2()" name="jugadores">
+            <button onclick="crear()">START</button>
+        </div>
 
     </div>
-    <canvas id="canvas" width="540" height="400"></canvas>
-
+    <canvas id="canvas" width="540" height="400" style="display: none;"></canvas>
     <script>
         var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
 
+        // Variables jugadores
+        var jugador2 = false;
+
         //Variables X e Y desde donde sale la bola
         var x = canvas.width / 2;
         var y = canvas.height - 120;
+        var x2 = canvas.width / 4;
+        var y2 = canvas.height - 120;
         //Variables para la velocidad por las cordenadas X e Y
-        var dx = 2;
-        var dy = -2;
+        var dx = 3;
+        var dy = -4;
+
+        var dx2 = 3;
+        var dy2 = -4;
 
         //Radio de la pelota
         var radioBall = 10;
@@ -69,10 +72,14 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 
         //Posicion por el eje X
         var rectX = (canvas.width - rectAncho) / 2;
+        var rectX2 = (canvas.width - rectAncho) / 4;
 
         //Teclas
         var der = false;
         var izq = false;
+
+        var der2 = false;
+        var izq2 = false;
 
         //Ladrillo
         var ladrilloAncho = 75;
@@ -95,19 +102,48 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
         //vidas
         var vidas = 3;
 
-        //
+        function input1() {
+            jugador2 = false;
+            document.getElementById("canvas").setAttribute("width", "540");
+            document.getElementById("canvas").setAttribute("height", "400");
+            ladrilloFilas = 4;
+            ladrilloColumnas = 6;
+            rectAlto = 10;
+            rectAncho = 75;
+            radioBall = 10;
+            ladrilloAncho = 75;
+            ladrilloAltura = 20;
+            vidas = 3;
+            rellenarLadrillos();
+        }
 
+        function input2() {
+            jugador2 = true;
+            document.getElementById("canvas").setAttribute("width", "1490");
+            document.getElementById("canvas").setAttribute("height", "900");
+            ladrilloFilas = 8;
+            ladrilloColumnas = 12;
+            rectAlto = 15;
+            rectAncho = 115;
+            radioBall = 15;
+            ladrilloAncho = 115;
+            ladrilloAltura = 25;
+            vidas = 6;
+            rellenarLadrillos();
+        }
 
         var ladrillos = [];
 
-        for (col = 0; col < ladrilloColumnas; col++) {
-            ladrillos[col] = [];
-            for (fila = 0; fila < ladrilloFilas; fila++) {
-                ladrillos[col][fila] = {
-                    x: 0,
-                    y: 0,
-                    status: 1
-                };
+        function rellenarLadrillos() {
+            for (col = 0; col < ladrilloColumnas; col++) {
+                ladrillos[col] = [];
+                for (fila = 0; fila < ladrilloFilas; fila++) {
+                    ladrillos[col][fila] = {
+                        x: 0,
+                        y: 0,
+                        status: 1
+                    };
+                }
             }
         }
 
@@ -121,8 +157,12 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             } else if (tecla.keyCode == 37) {
                 izq = false;
             }
+            if (tecla.keyCode == 65) {
+                der2 = false;
+            } else if (tecla.keyCode == 68) {
+                izq2 = false;
+            }
         }
-
 
 
         function Presionada(tecla) {
@@ -130,6 +170,11 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                 der = true;
             } else if (tecla.keyCode == 37) {
                 izq = true;
+            }
+            if (tecla.keyCode == 65) {
+                der2 = true;
+            } else if (tecla.keyCode == 68) {
+                izq2 = true;
             }
         }
 
@@ -157,13 +202,79 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                 for (fila = 0; fila < ladrilloFilas; fila++) {
                     var l = ladrillos[col][fila];
                     if (l.status == 1) {
-                        if (x+radioBall > l.x && (x+(radioBall+(radioBall/2))) <= l.x + ladrilloAncho && (y-radioBall) >= l.y && (y-radioBall) <= l.y + ladrilloAltura) {
+                        if (x+radioBall > l.x && x < l.x + ladrilloAncho && y-radioBall > l.y && y < l.y + ladrilloAltura) {
                             dy = -dy;
                             l.status = 0;
                             puntuacion++;
                             if (puntuacion == ladrilloColumnas * ladrilloFilas) {
                                 alert("Has ganado ENHORABUENA!!!!");
-                                    document.location.reload();
+                                document.getElementById("menu").style.display = ""
+                                document.getElementById("canvas").style.display = "none";
+
+                                x = canvas.width / 3;
+                                y = canvas.height - 50;
+                                dx = 3;
+                                dy = -4;
+                                rectX = (canvas.width - rectAncho) / 2;
+
+                                if (der && rectX < canvas.width - rectAncho) {
+                                    rectX += 7;
+                                } else if (izq && rectX > 0) {
+                                    rectX -= 7;
+                                }
+                                if (der2 && rectX2 < canvas.width - rectAncho) {
+                                    rectX2 += 7;
+                                } else if (izq2 && rectX2 > 0) {
+                                    rectX2 -= 7;
+                                }
+
+
+                                document.location.reload();
+
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        function deteccionColisiones2() {
+
+            for (col = 0; col < ladrilloColumnas; col++) {
+                for (fila = 0; fila < ladrilloFilas; fila++) {
+                    var l = ladrillos[col][fila];
+                    if (l.status == 1) {
+                        if (x2 >= l.x2 && x2 <= l.x2 + ladrilloAncho && y2 >= l.y2 && y2 <= l.y2 + ladrilloAltura) {
+                            dy2 = -dy2;
+                            l.status2 = 0;
+                            puntuacion++;
+                            if (puntuacion == ladrilloColumnas * ladrilloFilas) {
+                                alert("Has ganado ENHORABUENA!!!!");
+                                document.getElementById("menu").style.display = ""
+                                document.getElementById("canvas").style.display = "none";
+
+                                x2 = canvas.width / 3;
+                                y2 = canvas.height - 50;
+                                dx2 = 3;
+                                dy2 = -4;
+                                rectX2 = (canvas.width - rectAncho) / 2;
+
+                                if (der2 && rectX2 < canvas.width - rectAncho) {
+                                    rectX2 += 7;
+                                } else if (izq2 && rectX2 > 0) {
+                                    rectX2 -= 7;
+                                }
+                                if (der2 && rectX2 < canvas.width - rectAncho) {
+                                    rectX2 += 7;
+                                } else if (izq2 && rectX2 > 0) {
+                                    rectX2 -= 7;
+                                }
+
+
+                                document.location.reload();
+
                             }
                         }
                     }
@@ -189,12 +300,37 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
                 dy = -dy;
             }
         }
+
+        function crearBall2() {
+
+            context.beginPath();
+            context.arc(x2, y2, radioBall, 0, Math.PI * 2);
+            context.fillStyle = "black";
+            context.fill();
+            context.closePath();
+
+            if (x2 + dx2 > canvas.width - radioBall || x2 + dx2 < radioBall) {
+                dx2 = -dx2;
+            }
+            if (y2 + dy2 < radioBall) {
+                dy2 = -dy2;
+            }
+        }
         //funcion la cual nos crea el rectangulo
         function crearRect() {
             context.beginPath();
             //Dibuja el rectangulo a lo largo del eje X
             context.rect(rectX, canvas.height - rectAlto, rectAncho, rectAlto);
             context.fillStyle = "orange";
+            context.fill();
+            context.closePath();
+        }
+
+        function crearRect2() {
+            context.beginPath();
+            //Dibuja el rectangulo a lo largo del eje X
+            context.rect(rectX2, canvas.height - rectAlto, rectAncho, rectAlto);
+            context.fillStyle = "black";
             context.fill();
             context.closePath();
         }
@@ -223,11 +359,18 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
 
         //funcion la cual creara el juego y llama el resto de funciones
         function crear() {
+            document.getElementById("menu").style.display = "none"
+            document.getElementById("canvas").style.display = "";
             //Limpia
             context.clearRect(0, 0, canvas.width, canvas.height);
 
             crearBall();
             crearRect();
+            if (jugador2 == true) {
+                crearRect2();
+                crearBall2();
+                deteccionColisiones2();
+            }
             crearLadrillos();
             deteccionColisiones();
             crearPuntuacion();
@@ -237,46 +380,68 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             if (x + dx > canvas.width - radioBall || x + dx < radioBall) {
                 dx = -dx;
             }
-            
+            //Condicion la cual hace que rebote en el rectangulo
             if (y + dy < radioBall) {
                 dy = -dy;
-                //Condicion la cual hace que rebote en el rectangulo
+
                 //Condicion la cual hace que si toca la parte inferior se acabe el juego
                 // si toca el "suelo" pierde una vida
                 // si llega a 0 pierde
-            } else if (y + dy > canvas.height-(radioBall+(radioBall/2))) {
-                if (x > rectX && x < rectX + (rectAncho+(rectAncho/10))) {
+            } else if (y + dy > canvas.height - (radioBall + (radioBall / 2)) || y2 + dy2 > canvas.height - (radioBall + (radioBall / 2))) {
+                if (x >= rectX && x <= rectX + (rectAncho + (rectAncho / 10)) || x2 >= rectX2 && x2 <= rectX2 + (rectAncho + (rectAncho / 10))) {
                     dy = -dy;
+                    dy2 = -dy2;
                 } else {
                     vidas--;
                     if (!vidas) {
                         alert("GAME OVER");
+                        document.getElementById("menu").style.display = ""
+                        document.getElementById("canvas").style.display = "none";
                         document.location.reload();
                         //Cuantas menos vidas tienes mas rapido va todo
                     } else if (vidas == 2) {
                         x = canvas.width / 3;
                         y = canvas.height - 50;
+                        x2 = canvas.width / 3;
+                        y2 = canvas.height - 50;
                         dx = 4;
                         dy = -5;
+                        dx2 = 4;
+                        dy2 = -5;
                         rectX = (canvas.width - rectAncho) / 2;
+                        rectX2 = (canvas.width - rectAncho) / 2;
 
                         if (der && rectX < canvas.width - rectAncho) {
                             rectX += 9;
                         } else if (izq && rectX > 0) {
                             rectX -= 9;
                         }
+                        if (der2 && rectX2 < canvas.width - rectAncho) {
+                            rectX2 += 9;
+                        } else if (izq2 && rectX2 > 0) {
+                            rectX2 -= 9;
+                        }
 
                     } else if (vidas == 1) {
                         x = canvas.width / 3;
                         y = canvas.height - 50;
+                        x2 = canvas.width / 3;
+                        y2 = canvas.height - 50;
                         dx = 6;
                         dy = -7;
+                        dx2 = 6;
+                        dy2 = -7;
                         rectX = (canvas.width - rectAncho) / 2;
 
                         if (der && rectX < canvas.width - rectAncho) {
-                            rectX += 13;
+                            rectX += 11;
                         } else if (izq && rectX > 5) {
-                            rectX -= 13;
+                            rectX -= 11;
+                        }
+                        if (der2 && rectX2 < canvas.width - rectAncho) {
+                            rectX2 += 9;
+                        } else if (izq2 && rectX2 > 0) {
+                            rectX2 -= 9;
                         }
 
                     }
@@ -290,15 +455,21 @@ Puedes agregar otro jugador que se mueva de manera diferente al primero (1)
             } else if (izq && rectX > 0) {
                 rectX -= 7;
             }
+            if (der2 && rectX2 < canvas.width - rectAncho) {
+                rectX2 += 7;
+            } else if (izq2 && rectX2 > 0) {
+                rectX2 -= 7;
+            }
 
             x += dx;
             y += dy;
+            x2 += dx2;
+            y2 += dy2;
             requestAnimationFrame(crear);
         }
 
         // Hace un intervalo de la funcion pasada por parametro a los milisegundos puestos
         // me repite la funcion infinitamente a la velocidad que le diga
-        crear();
     </script>
 
 </body>
