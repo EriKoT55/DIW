@@ -390,6 +390,7 @@
                             //cambia el movimiento de la pelota al colisionar con un ladrillo
                             dy2 = -dy2;
                             //destruye el ladrillo
+                            l.status = 0;
                             puntuacion2++;
                             //Compara si todos los ladrillos has sido tirados y da un ganador
                             if (ladrilloColumnas * ladrilloFilas == (puntuacion2 + puntuacion)) {
