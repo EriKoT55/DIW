@@ -27,48 +27,59 @@
 
     <h2>Clica y mostraremos tu posicion, latitud y longitud</h2>
 
-    <button id="button" onclick="cogerLocalizacion()" >Activar Geolocalizacion</button>
+    <button id="button" onclick="cogerLocalizacion()">Activar Geolocalizacion</button>
 
     <p id="imprimir"></p>
 
+    <div id="googleMaps" style="width: 50%; height: 400px;"></div>
+
     <script>
         var imprimir = document.getElementById("imprimir");
-        
+
         function cogerLocalizacion() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(mostrarPosicion,muestraErrores);
-          } else { 
-            imprimir.innerHTML = "La geolocalizacion no es soportada por este navegador.";
-          }
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(mostrarPosicion, muestraErrores);
+            } else {
+                imprimir.innerHTML = "La geolocalizacion no es soportada por este navegador.";
+            }
         }
-        
+
         function mostrarPosicion(position) {
-            imprimir.innerHTML = "Latitud: " + position.coords.latitude + 
-          "<br>Longitud: " + position.coords.longitude;
+            imprimir.innerHTML = "Latitud: " + position.coords.latitude +
+                "<br>Longitud: " + position.coords.longitude;
         }
 
-        function muestraErrores(){
+        function muestraErrores() {
 
-            switch(error.code){
+            switch (error.code) {
                 case error.PERMISSION_DENIED:
-                    imprimir.innerHTML="El usuario denego la solicitud de geolocalizacion";
+                    imprimir.innerHTML = "El usuario denego la solicitud de geolocalizacion";
                     break;
                 case error.POSITION_UNAVAILABLE:
-                    imprimir.innerHTML="No se pudo obtener la informacion de la localizacion";
+                    imprimir.innerHTML = "No se pudo obtener la informacion de la localizacion";
                     break;
                 case error.TIMEOUT:
-                    imprimir.innerHTML="La carga de la geolocalizacion a excedido el tiempo";
+                    imprimir.innerHTML = "La carga de la geolocalizacion a excedido el tiempo";
                     break;
                 case error.UNKNOWN_ERROR:
-                    imprimir.innerHTML="Error desconocido";
+                    imprimir.innerHTML = "Error desconocido";
                     break;
             }
 
         }
+//https://github.com/danigo89/diw/blob/master/TEMA3/geolocation/geolocation.js
+        function myMap(){
+            var mapProp={
+                center:new google.maps.LatLng(51.508742,-0.120850),
+                zoom:5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMaps",mapProp));
+        }
 
-        </script>
-        
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12309.075550830663!2d2.5495122!3d39.5309878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1639759829020!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEvPkGCWPW5kWOUMEKHQMJkwERt1eZZT4&callback=myMap">
+    </script>
 </body>
 
 </html>
