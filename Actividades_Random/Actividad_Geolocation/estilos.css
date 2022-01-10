@@ -1,5 +1,15 @@
+
+h2{
+    text-align: center;
+}
+
 #button{
-    margin:10px;
+    margin-left: 44%;
     width: 100px;
-    height: 100px;
+    height: 30px;
+}
+#googleMaps{
+    margin:auto;
+    width: 60%;
+    height: 400px;
 }
