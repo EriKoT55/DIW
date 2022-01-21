@@ -1,0 +1,53 @@
+#body {
+    font-family: 'Readex Pro', sans-serif;
+    background-color: #FBBF76;
+}
+
+#nav {
+    background-color: #FA9D2A;
+}
+
+#nav ul li a {
+    color: black;
+}
+
+#nav ul li:hover {
+    background-color: #ffb672;
+}
+
+#icono {
+    background-color: rgb(248, 234, 207);
+}
+
+#icono:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+div p,
+h3,
+h4,
+h5,label {
+    color: white;
+    text-shadow: black 0px 2px 3px;
+}
+
+hr {
+    background-color: white;
+    height: 2px;
+    width: 95%;
+    text-align: center;
+}
+
+#SobreMiDIV,
+#SobreMiDIV1,
+#ExperienciaDIV,
+#ContactoDIV,
+#ContactoDIV1 {
+    background-color: #8f5d1f;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+footer {
+    background-color: #FA9D2A;
+}

@@ -22,58 +22,14 @@
     <!--Iconos Google-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- ICONO -->
+    <!-- ICONO  -->
     <link rel="shortcut icon" href="Icono/Icono_Marron.png">
+
+    <!-- ESTILOS -->
+    <link href="estilos.css" rel="stylesheet" type="text/css">
 
     <title>CV - Erik M.M.</title>
 
-    <style>
-        #body {
-            font-family: 'Readex Pro', sans-serif;
-            background-color: #FBBF76;
-        }
-
-        #nav {
-            background-color: #FA9D2A;
-        }
-
-        #nav ul li a {
-            color: black;
-        }
-
-        #nav ul li:hover {
-            background-color: #ffb672;
-        }
-
-        #icono {
-            background-color: rgb(248, 234, 207);
-        }
-
-        #icono:hover {
-            background-color: rgb(255, 255, 255);
-        }
-
-        div p,
-        h3,h4 {
-            color: white;
-            text-shadow: black 0px 2px 3px;
-        }
-
-        hr {
-            background-color: white;
-            height: 2px;
-            width: 90%;
-            text-align: center;
-        }
-
-        #SobreMiDIV,
-        #ExperienciaDIV,
-        #ContactoDIV {
-            background-color: #8f5d1f;
-            border-radius: 8px;
-            border: 1px solid white;
-        }
-    </style>
 </head>
 
 <body id="body">
@@ -104,23 +60,23 @@
 
     <div id="SobreMi" class="container-fluid mt-5 ">
         <div class="row mr-2 ml-2 align-items-center">
-            <div id="SobreMiDIV" class=" col-12 col-sm-12 col-md-12 col-lg-7 p-4 h-100">
+            <div id="SobreMiDIV" class=" col-12 col-sm-12 col-md-12 col-lg-6 p-4 h-100">
                 <h3 class="text-center mt-2 mb-3">Encantado, soy Erik Méndez Martín</h3>
                 <p>
                     Una de mis mayores virtudes es que soy un chico trabajador, me gusta llegar siempre 15min antes al
                     trabajo para ir tranquilo, aparte de que son, como diria yo, "mis minutos de oro" donde me mentalizo
-                    para esforzarme y darlo todo en el trabajo, tambien soy muy detallista e intentar
-                    perfeccionarlo todo lo que sepa, y si no se, una frase que digo siempre es "lo importante no es
+                    para esforzarme y darlo todo en el trabajo, tambien soy muy detallista e intento
+                    perfeccionar todo lo que se, y si no se, una frase que digo siempre es "lo importante no es
                     saber, si no, tener el numero del que sabe".
                 </p>
                 <br>
                 <p>
-                    Me considero una persona alegre, amigable y que trabajamuy bien en equipo, me amolda al grupo y
+                    Me considero una persona alegre, amigable y que trabaja muy bien en equipo, me amoldo al grupo y
                     aporto todo lo que se, creo que el debate es uno de nuestros fuertes como seres humanos y debemos
                     aprovecharlo para sacar conclusiones y llegar a acuerdos ya que supuestamente somos seres
                     racionales, aunque muchas veces no sea así, prosigo, por ello siempre estare habierto a discusion de
                     cualquier tema sobre proyectos, y no sere reacio a cambiar mi postura si logran exponer unos
-                    argumentos solidos que demuestres la validez de la postura de otro compañero, eso si siempre desde
+                    argumentos solidos que demuestren la validez de la postura de otro compañero, eso si siempre desde
                     el respeto y la tolerancia.
                 </p>
                 <br>
@@ -129,140 +85,179 @@
                     consigo aunque pueda tardar horas, dias y semanas.
                 </p>
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-5">
-            <h3 class="text-center">Idiomas - Habilidades</h3>
-            <canvas id="myChart" width="220px" height="150px" class=""></canvas>
-            <script>
-                const RADAR = document.getElementById('myChart').getContext('2d');
-                const myChart = new Chart(RADAR, {
-                    type: 'radar',
-                    data: {
-                        labels: ['PHP', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Ingles', 'Castellano',
-                            'Catalan'
-                        ],
-                        datasets: [{
+            <div class="col-12 col-sm-12 col-md-12 col-lg-5 h-100">
+                <h3 class="text-center">Idiomas - Habilidades</h3>
+                <canvas id="myChart" width="220px" height="150px"></canvas>
+                <script>
+                    const RADAR = document.getElementById('myChart').getContext('2d');
+                    const myChart = new Chart(RADAR, {
+                        type: 'radar',
+                        data: {
+                            labels: ['PHP', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Ingles', 'Castellano',
+                                'Catalan'
+                            ],
+                            datasets: [{
                                 label: ' IDIOMAS - HABILIDADES ',
                                 data: [7, 7.5, 10, 9, 9, 5, 9, 7, 0],
                                 backgroundColor: 'rgba(255, 255, 255, 0.3)',
                                 borderColor: 'rgba(255, 111, 0, 0.9)',
                                 borderWidth: 1
-                            },]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
+                            }, ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
                             }
                         }
-                    }
-                });
-            </script>
-        </div>
-        <div class="col-12">
-            <div>
-
+                    });
+                </script>
             </div>
-            <div>
-
-            </div>
-            <div>
-
+            <div class="row col-12 justify-content-center mb-3 mt-3">
+                <div class="col-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-check">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg><i class="material-icons" style="font-size:36px">directions_car</i>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-check">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg><i class="bi bi-check"></i><i class="material-icons" style="font-size:36px">laptop</i>
+                </div>
             </div>
         </div>
     </div>
-    </div>
+
     <hr style="background-color:white; height: 2px; width:90%;text-align:center;">
 
-    <div id="Experiencia" class="container mt-5 mb-5" style="background-color: #FBBF76;">
-        <div class="row ">
-            <div id="ExperienciaDIV" class="col-12 col-sm-12 col-md-12 col-lg-12 p-4">
+    <div id="Experiencia" class="container mt-5 mb-5 " style="background-color: #FBBF76;">
+        <div class="row justify-content-center">
+            <div id="ExperienciaDIV" class="col-10 col-sm-12 col-md-12 col-lg-12 p-4">
                 <h3 class="text-center mt-2 mb-2">Experiencia</h3>
                 <h4 class="ml-3 mb-4">Laboral</h4>
                 <div class="row">
-                    <i class="material-icons col-1" style="font-size:36px">account_balance</i>
-                    <p class="mt-2 col-10">
+                    <i class="material-icons col-1 mr-2" style="font-size:36px">account_balance</i>
+                    <h5 class="mt-1 mb-4 col-10">
                         Tecino Informatico - Level Eletronics (2019 - Marzo-Abril-Mayo-Junio)
-                    </p>
+                    </h5>
                     <p class="col-12 text-center">Reparación de impresoras,
                         ordenadores... Configuración antenas, routers y revisión de las mismas.</p>
                 </div>
 
-                <hr style="background-color:white; height: 2px; width:90%;text-align:center;">
-                
+                <hr>
+
                 <div class="row">
-                    <i class="material-icons col-1 mb-2" style="font-size:36px">account_balance</i>
-                    <p class="mt-2 col-10">
-                        Cajerao, Cocinero, Reponedor - TGB (2019 Julio-Agosto-Septiembre / 2021 Junio-Julio-Agosto)
-                    </p>
-                    <p class="col-12 text-center">Realización de pedidos, cocinero la mayor parte del tiempo o sacando pedidos,
+                    <i class="material-icons col-1 mb-2 mr-2" style="font-size:36px">account_balance</i>
+                    <h5 class="mt-1 mb-4 col-10">
+                        Cajero, Cocinero, Reponedor - TGB (2019 Julio-Agosto-Septiembre / 2021 Junio-Julio-Agosto)
+                    </h5>
+                    <p class="col-12 text-center">Realización de pedidos, cocinero la mayor parte del tiempo o sacando
+                        pedidos,
                         tambien realizando labores de limpieza, y administrativas en la caja</p>
                 </div>
-                <hr style="background-color:white; height: 2px; width:90%;text-align:center;">
+
+                <hr>
+
                 <h4 class="ml-3 mb-4 mt-4">Academica</h4>
                 <div class="row">
-                    <i class="material-icons col-1 mb-2" style="font-size:36px">book</i>
-                    <p class="mt-2 col-9">
+                    <i class="material-icons col-1 mb-2 mr-2" style="font-size:36px">book</i>
+                    <h5 class="mt-1 mb-4 col-9">
                         Instituto IES Bendinat - E.S.O (2012-2016)
-                    </p>
-                    <p class="col-12"></p>
+                    </h5>
+                    <p class="col-12 text-center">En este momento tenia pensado ir a una carrera de Fisica para
+                        posteriormente
+                        especificarme en Astronomia, mi gran sueño.</p>
                 </div>
-                <hr style="background-color:white; height: 2px; width:90%;text-align:center;">
+
+                <hr>
+
                 <div class="row">
-                    <i class="material-icons col-1" style="font-size:36px">book</i>
-                    <p class="mt-2 col-9">
-                       Instituto IES Son Ferrer - Grado Medio Sistemas Microinformáticos y Redes
-                    </p>
-                    <p class="col-12 text-center">Asignaturas 1º: </p>
-                    <p class="col-12 text-center">Asignaturas 2º: </p>
+                    <i class="material-icons col-1 mb-2 mr-2" style="font-size:36px">book</i>
+                    <h5 class="mt-1 mb-4 col-9">
+                        Instituto IES Bendinat - Bachillerato (2016-2017)
+                    </h5>
+                    <p class="col-12 text-center">En este momento me di cuenta que lo que necesitaba era un trabajo para
+                        ganar algo
+                        de dinero y poder independizarme lo antes posible, la carrera de Astronomia debia esperar, deje
+                        el Bachillerato y me enbarque en la aventura de la Informática que tambien me interesaba, esta
+                        rama si que tenia más salidas laborales. </p>
                 </div>
-                <hr style="background-color:white; height: 2px; width:90%;text-align:center;">
+
+                <hr>
+
                 <div class="row">
-                    <i class="material-icons col-1" style="font-size:36px">book</i>
-                    <p class="mt-2 col-9">
+                    <i class="material-icons col-1 mr-2" style="font-size:36px">book</i>
+                    <h5 class="mt-1 mb-4 col-9">
+                        Instituto IES Son Ferrer - Grado Medio Sistemas Microinformáticos y Redes
+                    </h5>
+                    <p class="col-12 text-center"><strong>Asignaturas 1º: </strong>Redes Locales, Formacion y
+                        Orientacion Laboral, Aplicaciones Ofimáticas, Montaje y Mantenimiento de Equipos, Sistemas
+                        Operativos </p>
+                    <p class="col-12 text-center"><strong>Asignaturas 2º: </strong>Empresa, Seguridad Informática,
+                        Servicios en Red, Aplicaciones Web</p>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <i class="material-icons col-1 mr-2" style="font-size:36px">book</i>
+                    <h5 class="mt-1 mb-4 col-9">
                         Instituto IES Son Ferrer - Grado Superior Aplicaciones Web
-                    </p>
-                    <p class="col-12 text-center">Asignaturas 1º: </p>
-                    <p class="col-12 text-center">Asignaturas 2º: </p>
+                    </h5>
+                    <p class="col-12 text-center"><strong>Asignaturas 1º: </strong> Sistemas Informaticos, F.O.L,
+                        Lenguaje de Marcas, Programación, Entornos de Desarrollo y Base de Datos</p>
+                    <p class="col-12 text-center"><strong>Asignaturas 2º: </strong> Desarrollo de Aplicaciones Web,
+                        Desarrollo de Interfaces Web, Desarrollo Web Servidor, Desarrollo Web Cliente y Empresa </p>
                 </div>
-                <hr style="background-color:white; height: 2px; width:90%;text-align:center;">
-               
-                <p>
-                    Me considero una persona alegre, amigable y que trabajamuy bien en equipo, me amolda al grupo y
-                    aporto todo lo que se, creo que el debate es uno de nuestros fuertes como seres humanos y debemos
-                    aprovecharlo para sacar conclusiones y llegar a acuerdos ya que supuestamente somos seres
-                    racionales, aunque muchas veces no sea así, prosigo, por ello siempre estare habierto a discusion de
-                    cualquier tema sobre proyectos, y no sere reacio a cambiar mi postura si logran exponer unos
-                    argumentos solidos que demuestres la validez de la postura de otro compañero, eso si siempre desde
-                    el respeto y la tolerancia.
-                </p>
-                <p>
-                    Uno de mis defectos es que si se me mete algo en la cabeza lo intento desarrollar hasta que lo
-                    consigo aunque pueda tardar horas, dias y semanas.
-                </p>
+
             </div>
         </div>
     </div>
 
     <hr style="background-color:white; height: 2px; width:90%;text-align:center;">
 
-    <div id="Contacto" class="container mt-5 mb-5" style="background-color: #FBBF76;">
-        <div class="row ">
-            <div id="ContactoDIV" class="col-12 col-sm-12 col-md-12 col-lg-12 p-4">
+    <div id="Contacto" class="container-fluid mt-5 mb-5 ">
+        <div class="row mr-3 ml-3 align-items-center">
+            <div id="ContactoDIV" class="col-12 col-sm-12 col-md-12 col-lg-7 mr-5 mb-3 p-4">
                 <h3 class="text-center mt-2 mb-3">Contactame</h3>
                 <form action="mailto:erik55@outlook.es" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label for="Email">Correo</label>
-                        <input type="email" class="form-control" id="Email">
+                        <input type="email" class="form-control" placeholder="Correo" id="Email">
                     </div>
                     <div class="form-group">
                         <label for="asunto">Asunto</label>
-                        <textarea class="form-control" id="asunto" rows="1" required></textarea>
+                        <textarea class="form-control" id="asunto" rows="1" placeholder="Asunto" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="textarea">Comentario</label>
-                        <textarea class="form-control" id="textarea" rows="3" required></textarea>
+                        <textarea class="form-control" id="textarea" rows="3" placeholder="Comentario"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-light" type="submit" value="Enviar">
                     </div>
                 </form>
+            </div>
+            <div id="ContactoDIV1" class="col-12 col-sd-12 col-md-12 col-lg-4  h-100  ">
+                <h3 class="text-center mt-4">Datos de Contacto</h3>
+                <div class="row text-center mt-4">
+                    <p class="col-5 ">Nombre:</p>
+                    <p class="col-6">Erik Méndez Martín</p>
+                </div>
+                <div class="row text-center mt-4">
+                    <p class="col-5 ">Telefono:</p>
+                    <p class="col-6">697661849</p>
+                </div>
+                <div class="row text-center mt-4 mb-3">
+                    <p class="col-5 ">Correo:</p>
+                    <p class="col-6">erik55@outlook.es</p>
+                </div>
             </div>
         </div>
     </div>
@@ -275,5 +270,10 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
 </body>
+<footer class="page-footer font-small pt-4">
+    <div class="footer-copyright text-center py-3">
+        <p>© 2022 Copyright: Derechos reservados por pedazo de CV</p>
+    </div>
+</footer>
 
 </html>
