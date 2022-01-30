@@ -16,13 +16,12 @@ body {
 
 #navBar ul li a {
     font-size: x-large;
-    color: white;
-    text-shadow: black -1px 1px 2px;
-
+    color: black;
 }
 
 #navBar ul li:hover a {
-    color: rgb(223, 223, 223);
+    color: rgb(77, 77, 77);
+    text-shadow: rgb(182, 182, 182) -1px 1px 3px;
 }
 
 /*#navBar #logoAMS{
@@ -43,10 +42,13 @@ body {
 viewport podría traducirse como vista o ventana y nos sirve para definir qué área de pantalla está disponible al renderizar un documento, 
 nivel de escalado y el zoom que debe mostrar inicialmente.
 */
-    height: 55vh;
-    min-height: 300px;
+    height: 70vh;
+    
 }
-
+.carousel-inner #imgCarrousel {
+    width: 100%;
+    height: 100%;
+  }
 #h3Carrousel {
     text-shadow: black 1px 3px 5px;
 }
@@ -102,11 +104,7 @@ nivel de escalado y el zoom que debe mostrar inicialmente.
     text-shadow: black -1px -1px 3px, black 0px 1px 3px;
     border: none;
     box-shadow: black 0px 5px 5px 1px;
-
-}
-
-#btnApuntate a {
-    text-decoration: none;
+    color:white;
 }
 
 #btnApuntate:hover {
