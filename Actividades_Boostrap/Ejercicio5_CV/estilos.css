@@ -4,15 +4,15 @@
 }
 
 #nav {
-    background-color: #FA9D2A;
+    background-color: #180d00;
 }
 
 #nav ul li a {
-    color: black;
+    color: white;
 }
 
 #nav ul li:hover {
-    background-color: #ffb672;
+    background-color: #351a00;
 }
 
 #icono {
@@ -49,5 +49,9 @@ hr {
 }
 
 footer {
-    background-color: #FA9D2A;
+    
+    background-color: #180d00;
+}
+footer p{
+    color:white;
 }

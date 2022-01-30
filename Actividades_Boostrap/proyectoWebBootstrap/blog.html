@@ -16,43 +16,41 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <!--Iconos Google-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- ICONO  -->
-    <link rel="shortcut icon" href="imgs/escudoAMS.png">
+    <link rel="shortcut icon" href="imgs/LOGO_AMISTAD.png">
 
     <!-- ESTILOS -->
-    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <link href="estilos/estilosBlog.css" rel="stylesheet" type="text/css">
 
     <title>Amistad</title>
 
-
 </head>
 
-<body id="body">
-    <!--Hacer scrollspy
-https://getbootstrap.com/docs/4.0/components/scrollspy/
--->
+
+<body id="body" data-spy="scroll" data-target="#navBar">
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="main.html"><img SRC="imgs/escudoAMS.png" alt="Logo Amistad" width="65"
-                    height="55"></a>
+        <nav id="navBar" class="navbar navbar-expand-lg  fixed-top">
+            <a class="navbar-brand" href="main.html"><img id="logoAMS" src="imgs/LOGO_AMISTAD.png" alt="Logo Amistad"
+                    width="65" height="55"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span id="bars" class="fas fa-bars"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-
                     <li class="nav-item">
                         <a class="nav-link" href="presentacion.html">Presentacion</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
                             Blog
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div id="navBar" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="blog.html#Noticias">Noticias</a>
                             <a class="dropdown-item" href="blog.html#Articulos">Articulos</a>
                         </div>
@@ -61,48 +59,13 @@ https://getbootstrap.com/docs/4.0/components/scrollspy/
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </nav>
     </header>
-    <div class="container-fluid mt-3">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade  mx-auto col-12 col-sm-12 col-md-12 col-lg-8"
-            data-ride="carousel">
-            <div class="carousel-inner ">
-                <div class="carousel-item active">
-                    <img id="imgCarrousel" src="imgs/Cursa_UIB.jpg" class="d-block w-100  img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 id="h3Carrousel" class="font-weight-bold text-body">Cursa en la UIB 2021</h3>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img id="imgCarrousel" src="imgs/Campeonato_Baleares.jpg" class="d-block w-100  img-fluid"
-                        alt="...">
-                    <div class="carousel-caption d-none d-md-block ">
-                        <h3 id="h3Carrousel" class="font-weight-bold text-body">Campeonato de Baleares 2021</h3>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img id="imgCarrousel" src="imgs/BarriOlimpiada.jpg" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 id="h3Carrousel" class="font-weight-bold text-body ">BarriOlimpiada 2021</h3>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
-        </div>
+    <div id="OBRAS" class="alert alert-danger">
+        <h1>EN OBRAS</h1>
     </div>
-    <div id="Noticias" class="container-fluid mt-5 ">
+    <div id="Noticias" class="container-fluid">
         <div class="row col-12 col-sm-12 col-md-12 col-lg-12">
             <div>
                 <h2 class="col-12">CLUB ATLETISME AMISTAT</h2>
@@ -158,22 +121,40 @@ https://getbootstrap.com/docs/4.0/components/scrollspy/
             </div>
         </div>
     </div>
-    <!-- FUNCTIONAL GRID CON IMG RONDED, poner col-6 para que sean responsive y esten bien
-  estructurradas, resumiendo
-https://getbootstrap.com/docs/4.6/content/images/
--->
+    <hr>
+    <div class="container-fluid mt-5">
+        <h1 id="Comentarios">Comentarios</h1>
+    </div>
+    <div class="container-fluid mt-5">
+        <div class="media">
+            <img id="imgComent" class="mr-3 rounded" src="imgs/Manolo.PNG" alt="IMG de manolo">
+            <div class="media-body">
+                <h4 class="mt-0">Manolo</h4>
+                <p>No me inscribire, porque no me gusta el color lila o purpura, mira me gusta tan poco que no se ni
+                    diferenciarlo</p>
+                <div class="media mt-4">
+                    <img id="imgComent" class="mr-3 rounded" src="imgs/pepe.jpg" alt="IMG de pepe">
+                    <div class="media-body">
+                        <p class="text-secondary">En respues a Manolo</p>
+                        <h4 class="">Pepe Larias</h4>
+                        <p>Este hombre no tiene ni idea, aparte si no sabe diferenciarlo como va a saber que no le
+                            gusta, en fin la hipocresia de la sociedad contemporanea frita por el exceso de
+                            estimulaciones.</p>
+                    </div>
 
-    <!-- MODAL
-https://getbootstrap.com/docs/4.6/components/modal/
+                </div>
 
--->
-    <!--progress bar STRIPED
-https://getbootstrap.com/docs/4.6/components/progress/
--->
+            </div>
 
-    <!-- Offcanvas
-  https://getbootstrap.com/docs/5.0/components/offcanvas/
--->
+        </div>
+        <div class="media">
+            <img id="imgComent" class="mr-3 rounded" src="imgs/jose.jpg" alt="Generic placeholder image">
+            <div class="media-body">
+                <h5 class="mt-0">Jose el Jose</h5>
+                <p>EMBESES pienso estar murido pero, dejo de pensar y revivo - Platon 2025</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -184,7 +165,7 @@ https://getbootstrap.com/docs/4.6/components/progress/
     </script>
 </body>
 <footer class="page-footer font-small pt-4">
-    <div class="footer-copyright text-center py-3">
+    <div class="footer-copyright text-center bg-dark text-light py-3 pt-5">
         <p>© 2022 Copyright | Todos los derechos reservados Club Atletismo Amistad</p>
     </div>
 </footer>

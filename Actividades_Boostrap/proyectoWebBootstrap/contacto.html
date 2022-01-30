@@ -14,45 +14,57 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+    </script>
+
+
     <!--Iconos Google-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- ICONO  -->
-    <link rel="shortcut icon" href="imgs/escudoAMS.png">
+    <link rel="shortcut icon" href="imgs/LOGO_AMISTAD.png">
 
     <!-- ESTILOS -->
-    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <link href="estilos/estilosContacto.css" rel="stylesheet" type="text/css">
 
     <title>Amistad</title>
 
 
+
+
+
+
 </head>
 
-<body id="body">
-    <!--Hacer scrollspy
-https://getbootstrap.com/docs/4.0/components/scrollspy/
--->
+
+<body id="body" data-spy="scroll" data-target="#navBar">
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="main.html"><img SRC="imgs/escudoAMS.png" alt="Logo Amistad" width="65"
-                    height="55"></a>
+        <nav id="navBar" class="navbar navbar-expand-lg  fixed-top">
+            <a class="navbar-brand" href="main.html"><img id="logoAMS" src="imgs/LOGO_AMISTAD.png" alt="Logo Amistad"
+                    width="65" height="55"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span id="bars" class="fas fa-bars"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-
                     <li class="nav-item">
                         <a class="nav-link" href="presentacion.html">Presentacion</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
                             Blog
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div id="navBar" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="blog.html#Noticias">Noticias</a>
                             <a class="dropdown-item" href="blog.html#Articulos">Articulos</a>
                         </div>
@@ -61,58 +73,107 @@ https://getbootstrap.com/docs/4.0/components/scrollspy/
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </nav>
     </header>
+    <!--TOAST HACER-->
 
-    <div class="container-fluid mt-5 ">
-        <div class="row col-12 col-sm-12 col-md-12 col-lg-12">
-            <div>
-                <h2 class="col-12">CLUB ATLETISME AMISTAT</h2>
-            </div>
-            <div class="col-12">
-                <p class="font-weight-bold">Desde 1999.</p>
-                <p>Apúntate a correr con nosotros y disfruta de este precioso deporte acompañados de los mejores
-                    compañeros y
-                    entrenadores de atletismo</p>
+    <div id="Contacto">
+        <div id="contactos" class="container">
+            <div class="container">
+                <div id="Correo" class="card text-center">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <img src="imgs/correoLogo.png">
+                        <h5 class="card-text mt-3"><span id="yellow">Corr</span><span id="orange">eo e</span><span
+                                id="red">lec</span><span id="purple">tró</span><span id="blue">nico</span></h5>
+                        <h4 class="card-title">amistat@clubamistat.es</h4>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Offcanvas
-  https://getbootstrap.com/docs/5.0/components/offcanvas/
--->
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-    Button with data-bs-target
-  </button>
-  
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    
+
+    <div id="contactos" class="container mt-5">
+        <div class="container">
+            <div id="Correo" class="card text-center">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <img src="imgs/ubicacionLogo.png">
+                    <h5 class="card-text mt-3"><span id="yellow">Ub</span><span id="orange">ic</span><span
+                            id="red">ac</span><span id="purple">io</span><span id="blue">n</span></h5>
+                    <h4 class="card-title">Pista de atletismo Calvià</h4>
+                    <h3>Carrer Miño, Calvià</h3>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
     </div>
-    <div class="offcanvas-body">
-      <div>
-        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-      </div>
+    <div class="container-fluid mt-5">
+        <div class="row mx-auto justify-content-center">
+            <button id="btnContact" class="rounded" data-toggle="collapse" data-target="#demo">CONTACTENOS</button>
+        </div>
+        <div id="demo" class="collapse container">
+            <form id="containerForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="textArea">Textarea</label>
+                    <textarea class="form-control" id="textArea" rows="3" required></textarea>
+                </div>
+                <input id="liveToastBtn" type="submit" class="btn " value="Enviar" />
+
+            </form>
+        </div>
     </div>
-  </div>
+
+    <div class="position-fixed bottom-0 right-0 p-3" style="z-index:5; right: 0; bottom: 0;">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+            <div class="toast-header">
+                <strong class="mr-auto">Contacto</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                Fue enviado el mensaje, muchas gracias
+            </div>
+        </div>
+    </div>
+
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
-    </script>
+
 </body>
 <footer class="page-footer font-small pt-4">
-    <div class="footer-copyright text-center py-3">
+    <div class="footer-copyright text-center bg-dark text-light  py-3 pt-5">
         <p>© 2022 Copyright | Todos los derechos reservados Club Atletismo Amistad</p>
     </div>
 </footer>
+<script>
 
+const $form = document.querySelector("#containerForm");
+
+//PARA QUE NO SE REFRESQUE LA PAGINA
+$form.addEventListener("submit", handleSumbit);
+
+function handleSumbit(event){
+    event.preventDefault();
+}
+
+//PARA QUE FUNCIONE EL TOAST
+    $(document).ready(function () {
+        $("#liveToastBtn").click(function () {
+            $('.toast').toast('show');
+        });
+    });
+</script>
 </html>
