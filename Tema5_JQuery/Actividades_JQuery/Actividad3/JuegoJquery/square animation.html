@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Manipulating the DOM</title>
+	<meta charset="UTF-8">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!--  Setting or returning one or more style properties for selected elements -->
+
+	<script>
+		let hiden = 0;
+		//Mover aleatoriamente los divs cada 3secs
+		//Si clicas en uno se escondera, ir sumando los que estan escondidos
+		$(document).ready(function () {
+
+			$("#result").text("Intenta capturar los cuadrados: " + hiden + " capturados");
+
+			animacionDiv(".blue");
+			animacionDiv(".green");
+			animacionDiv(".yellow");
+			animacionDiv(".red");
+
+
+			hoverMoveDiv(".blue");
+			hoverMoveDiv(".green");
+			hoverMoveDiv(".yellow");
+			hoverMoveDiv(".red");
+
+			hidden(".blue");
+			hidden(".green");
+			hidden(".yellow");
+			hidden(".red");
+
+
+
+		});
+
+		function posicionRandom() {
+
+			//Cojo la altura y el ancho de la pagina
+			let ancho = $(window).width() - 50;
+			let alto = $(window).height() - 50;
+
+			let newAncho = Math.floor(Math.random() * ancho);
+			let newAlto = Math.floor(Math.random() * alto);
+
+			return [newAlto, newAncho];
+
+		}
+
+		function animacionDiv(divClass) {
+			//Recojo el ato y ancho
+			var nuevaPosicion = posicionRandom();
+
+			//Animo los divs en una posicion random dada por el array de la fucion anterior
+			// cada 1500milisegundos
+
+			$(divClass).animate({
+				top: nuevaPosicion[0],
+				left: nuevaPosicion[1]
+			}, 1500, function () {
+				animacionDiv(divClass);
+			});
+
+		};
+
+		function hoverMoveDiv(divClass) {
+
+
+			// Animo los divs en una posicion random dada por el array de la fucion anterior, 
+			// si se pasa por encima
+			// cada 1000milisegundos
+			var nuevaPosicionHover = posicionRandom();
+
+			$(divClass).hover(function () {
+				$(divClass).animate({
+					top: nuevaPosicionHover[0],
+					left: nuevaPosicionHover[1]
+				}, 1000, function () {
+					hoverMoveDiv(divClass);
+				});
+			});
+		}
+
+
+		function hidden(divClass) {
+
+			//Oculto el div y cuento los divs que han sido oculados, muestro los divs capturados
+			$(divClass).click(function () {
+				if ($(divClass).attr("hidden", "hidden")) {
+					hiden++;
+					$("#result").text("Intenta capturar los cuadrados: " + hiden + " capturados");
+				}
+			});
+
+
+		}
+	</script>
+
+	<style type="text/css">
+		div {
+			width: 60px;
+			height: 60px;
+			margin: 5px;
+			position: fixed;
+		}
+	</style>
+</head>
+
+<body>
+	<p id="result">&nbsp;</p>
+	<div class="blue" style="background-color: blue;"></div>
+	<div class="green" style="background-color: green;"></div>
+	<div class="yellow" style="background-color: yellow;"></div>
+	<div class="red" style="background-color: #f11;"></div>
+</body>
+
+</html>

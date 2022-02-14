@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script>
+        let hiden = 0;
+        //Mover aleatoriamente los divs cada 3secs
+        //Si clicas en uno se escondera, ir sumando los que estan escondidos
+        $(document).ready(function () {
+
+            $("#result").text("Intenta capturar los cuadrados: " + hiden + " capturados");
+
+            animateDiv('.blue');
+            animateDiv('.green');
+            animateDiv('.yellow');
+            animateDiv('.red');
+
+
+        });
+
+        function makeNewPosition() {
+
+            // Get viewport dimensions (remove the dimension of the div)
+            var h = $(window).height() - 50;
+            var w = $(window).width() - 50;
+
+            var nh = Math.floor(Math.random() * h);
+            var nw = Math.floor(Math.random() * w);
+
+            return [nh, nw];
+
+        }
+
+        function animateDiv(myclass) {
+            var newq = makeNewPosition();
+            $(myclass).animate({
+                top: newq[0],
+                left: newq[1]
+            }, 1000, function () {
+                animateDiv(myclass);
+            });
+            //Oculto el div y cuento los divs que han sido oculados
+            $(myclass).click(function () {
+                $(myclass).hide(hiden++);
+            });
+
+            //Muestro los divs ocultados al ser clicados
+            $(myclass).click(function () {
+                $("#result").text("Intenta capturar los cuadrados: " + hiden + " capturados");
+            });
+        };
+    </script>
+    <style>
+        div {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="result">&nbsp;</p>
+    <div class="blue" style="background-color: blue;"></div>
+    <div class="green" style="background-color: green;"></div>
+    <div class="yellow" style="background-color: yellow;"></div>
+    <div class="red" style="background-color: #f11;"></div>
+</body>
+
+</html>
