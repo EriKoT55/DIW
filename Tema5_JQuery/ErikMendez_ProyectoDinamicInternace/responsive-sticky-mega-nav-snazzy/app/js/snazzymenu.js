@@ -15,7 +15,7 @@
                 toggleBtn: 'caret', // options: 'caret' or 'plus'. Make the .toggle dropdown icons either a caret or a plus sign for mobile viewports
                 homeBtn:
                     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"/></svg>', // add a custom logo image that routes to homepage or use default home icon
-                phoneBtn: '', // adds a click-to-call phone link to the top of menu - i.e.: "18009084500"
+                phoneBtn: 'HOLA', // adds a click-to-call phone link to the top of menu - i.e.: "18009084500"
                 phoneLabel: 'Call', // label for the phone button
                 locationBtn: '', // adds a location link to the top of menu - i.e.: "/location/", "http://site.com/contact-us/"
                 locationLabel: 'Location', // label for the location button
@@ -58,7 +58,7 @@
                 homeBtn = '';
             }
 
-            if (settings.phoneLabel) {
+            /*if (settings.phoneLabel) {
                 phoneLabel = settings.phoneLabel;
             } else {
                 phoneLabel = '';
@@ -68,14 +68,15 @@
                 locationLabel = settings.locationLabel;
             } else {
                 locationLabel = '';
-            }
-
+            }*/
+            
             // Load .cta/ .controls/ .close-overlay dynamically
             nav.find('.menu').before(
                 '<div class="controls"><div class="logo"><a href="/" title="" aria-label="Home">' +
                     homeBtn +
                     '</a></div><div class="cta"><button class="menu-toggle" aria-label="Menu"></button></div></div>'
             );
+
             nav.after('<div class="close-overlay"></div>');
 
             // Add .has-sub class to li dropdowns
@@ -83,7 +84,7 @@
                 $('li.menu-item-has-children').addClass('has-sub');
             }
 
-            // Adds a location page link to the beginning of nav
+            /* Adds a location page link to the beginning of nav
             if (settings.locationBtn) {
                 const btn =
                     '<a href="' +
@@ -93,9 +94,9 @@
                     locationLabel +
                     '</span></a>';
                 nav.find('.cta').prepend(btn);
-            }
+            }*/
 
-            // Adds a click-to-call link
+            /* Adds a click-to-call link
             if (settings.phoneBtn) {
                 const btn =
                     '<a href="tel:' +
@@ -105,7 +106,7 @@
                     phoneLabel +
                     '</span></a>';
                 nav.find('.cta').prepend(btn);
-            }
+            }*/
 
             // Open menu
             $('.menu-toggle').on('click', function () {

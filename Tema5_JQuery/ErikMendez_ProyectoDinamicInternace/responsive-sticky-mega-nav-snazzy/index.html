@@ -1,153 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--APLICAR EL JQUERY SCRIPT PARA CAMBIAR COLOR DE LETRA Y FONDO ESTA DESCARGADO EN LA CARPETA-->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SnazzyMenu - Responsive, Mega Menu Navigation</title>
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>SnazzyMenu - Responsive, Mega Menu Navigation</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="dist/css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="dist/css/style.css">
 
-    <!-- estilos, fuente -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-    <style>
-        html {
-            box-sizing: border-box;
-            margin: 0;
-            font-size: 16px
-        }
-
-        *,
-        ::before,
-        ::after {
-            box-sizing: inherit
-        }
-
-        body {
-            font-family: 'Recursive', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #222;
-            position: relative;
-            width: 100%;
-            overflow-x: hidden
-        }
-
-        h1 {
-            font-size: 2.75rem;
-            margin: 0 0 .5rem;
-            color: #222
-        }
-
-        p {
-            line-height: 1.75;
-            margin: 0
-        }
-
-        header {
-            margin-bottom: 3rem;
-            padding: 3rem 15px 0
-        }
-
-        header p {
-            font-size: 1.125rem
-        }
-
-        .btn {
-            display: inline-block;
-            font-size: 1.125rem;
-            color: #222;
-            border-radius: 4px;
-            border: solid 1px #222;
-            padding: 1rem 2rem;
-            margin-top: 2rem;
-            transition: all .3s ease
-        }
-
-        .btn:hover {
-            background: #222;
-            color: #fff
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0
-        }
-
-        a {
-            text-decoration: none;
-            outline: none
-        }
-
-        .img-resp {
-            height: auto;
-            max-width: 100%
-        }
-
-        .tac {
-            text-align: center
-        }
-
-        .content {
-            max-width: 1200px;
-            margin: 8rem auto 0;
-            padding: 0 15px
-        }
-
-        section:nth-of-type(2) p {
-            font-size: 1.125rem
-        }
-
-        section {
-            margin-bottom: 2rem
-        }
-
-        section.tac {
-            margin-bottom: 4rem
-        }
-
-        /*mis estilos*/
-        header#img {
-            background-image: url("app/imgs/nature7.jpg");
-            background-repeat: no-repeat;
-            min-height: 100%;
-            background-size: cover;
-            margin-bottom: -8px;
-        }
-
-        #img div h1 {
-            color: white;
-            text-shadow: #222 5px 5px 5px;
-            padding-bottom: 35px;
-        }
-
-        footer#footer {
-            background-color: #222;
-            height: 80px;
-            color: white;
-        }
-
-        footer#footer p {
-            padding: 24px;
-        }
-
-        div#avion {
-            position: relative;
-            background-image: url("app/imgs/avion.png");
-            background-repeat: no-repeat;
-            min-height: 100%;
-            background-size: cover;
-            margin: 0;
-            width: 50px;
-            height: 50px;
-
-        }
-    </style>
+<!-- estilos, fuente -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+<link href="estilos/estilos.css" rel="stylesheet">
 
 </head>
 
@@ -157,6 +24,7 @@
     <header id="img">
         <div class="tac">
             <h1>Viajes Eriki</h1>
+            <button id="B_L">Noche</button>
         </div>
     </header>
 
@@ -207,16 +75,15 @@
                                 programación Movil</a></li>
                     </ul>
                 </li>
-                <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Link a la
-                        pagina</a>
-                </li>
             </ul>
         </div>
         <!-- End Menu -->
     </nav>
 
-
     <div class="content">
+
+        <!-- boton que me saque un form en el centro de la pagina para poder añadir un div nuevo o borrar alguno que este-->
+
         <br>
         <section class="tac">
             <h1>Conocenos un poco más</h1>
@@ -252,24 +119,56 @@
         <p id="copyright">&copy; <span id="year"></span> Viajes Eriki Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", "#B_L", function () {
+
+                    if ($("#B_L").text() == "Noche") {
+
+                        $("body").css("background-color", "rgb(57, 57, 57)");
+                        $("#B_L").text("Dia");
+                        $("#B_L").css("margin-left", " 94%");
+                        $("#B_L").css("border", "#222 1px solid");
+                        $("#B_L").css("background-color", "white");
+                        $("#B_L").css("color", "black");
+                        $(".content").children("section").children("h1").css("color", "white")
+                        $(".content").children("section").css("color", "white");
+
+                    } else if ($("#B_L").text() == "Dia") {
+
+
+                        $("body").css("background-color", "white");
+                        $("#B_L").text("Noche");
+                        $("#B_L").css("margin-left", " 91%");
+                        $("#B_L").css("border", "white 1px solid");
+                        $("#B_L").css("background-color", "black");
+                        $("#B_L").css("color", "white");
+                        $(".content").children("section").children("h1").css("color", "#222")
+                        $(".content").children("section").css("color", "#222");
+
+            }
+        });
+        });
+    </script>
 
     <script type="text/javascript">
-        //CREAR UN PAR DE BOTONES PARA QUE EL USUARIO PUEDA CAMBIAR POR EJEMPLO EL COLOR DE LAS LETRAS Y 
-        //EL COLOR DE FONDO
+        
+
+
     </script>
 
 
     <script type="text/javascript">
         //Animacion del avion hasta el borde del ancho ida y vuelta al pasar por encima 
 
-        let ancho = $(window).width() - 550;
+        let ancho = $(window).width() - 50;
 
         $(document).ready(function () {
             $("#avion").css("left", "0px");
             $("#avion").hover(function () {
                 $("#avion").animate({
                     left: ancho
-                }, 4000);
+                }, 2000);
             });
         });
 
@@ -279,7 +178,7 @@
                 $("#avion").hover(function () {
                     $("#avion").animate({
                         left: "0px"
-                    }, 2000);
+                    }, 1200);
                 });
             });
 

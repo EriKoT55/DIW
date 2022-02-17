@@ -1,0 +1,150 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 16px
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit
+}
+
+body {
+    font-family: 'Recursive', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden
+}
+
+h1 {
+    font-size: 2.75rem;
+    margin: 0 0 .5rem;
+    color: #222
+}
+
+p {
+    line-height: 1.75;
+    margin: 0
+}
+
+header {
+    margin-bottom: 3rem;
+    padding: 3rem 15px 0
+}
+
+header p {
+    font-size: 1.125rem
+}
+
+.btn {
+    display: inline-block;
+    font-size: 1.125rem;
+    color: #222;
+    border-radius: 4px;
+    border: solid 1px #222;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    transition: all .3s ease
+}
+
+.btn:hover {
+    background: #222;
+    color: #fff
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+a {
+    text-decoration: none;
+    outline: none
+}
+
+.img-resp {
+    height: auto;
+    max-width: 100%
+}
+
+.tac {
+    text-align: center
+}
+
+.content {
+    max-width: 1200px;
+    margin: 8rem auto 0;
+    padding: 0 15px
+}
+
+section:nth-of-type(2) p {
+    font-size: 1.125rem
+}
+
+section {
+    margin-bottom: 2rem
+}
+
+section.tac {
+    margin-bottom: 4rem
+}
+
+/*mis estilos*/
+header#img {
+    background-image: url("../app/imgs/nature7.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    background-size: cover;
+    margin-bottom: -8px;
+}
+
+header#img div #B_L{
+    margin-bottom:15px;
+    margin-left: 91%;
+    border-radius: 5px;
+    border: gainsboro 1px solid;
+    background-color: #222;
+    color: white;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /*box-shadow: #222 15px 55px 55px 5px;*/
+}
+header#img div #B_L:hover{
+    
+    background-color: rgb(99, 99, 99);
+
+}
+
+#img div h1 {
+    color: white;
+    text-shadow: #222 5px 5px 5px;
+    padding-bottom: 35px;
+}
+
+footer#footer {
+    background-color: #222;
+    height: 80px;
+    color: white;
+}
+
+footer#footer p {
+    padding: 24px;
+}
+
+div#avion {
+    position: relative;
+    background-image: url("../app/imgs/avion.png");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    background-size: cover;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+
+}
