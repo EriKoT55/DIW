@@ -8,9 +8,11 @@
     <title>SnazzyMenu - Responsive, Mega Menu Navigation</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="dist/css/style.css">
 
-    <!-- Styles for this sample page only -->
+    <!-- estilos, fuente -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <style>
         html {
@@ -108,34 +110,61 @@
         section.tac {
             margin-bottom: 4rem
         }
+
+        /*mis estilos*/
+        header#img {
+            background-image: url("app/imgs/nature7.jpg");
+            background-repeat: no-repeat;
+            min-height: 100%;
+            background-size: cover;
+            margin-bottom: -8px;
+        }
+
+        #img div h1 {
+            color: white;
+            text-shadow: #222 5px 5px 5px;
+            padding-bottom: 35px;
+        }
+
+        footer#footer {
+            background-color: #222;
+            height: 80px;
+            color: white;
+        }
+
+        footer#footer p {
+            padding: 24px;
+        }
+
+        div#avion {
+            position: relative;
+            background-image: url("app/imgs/avion.png");
+            background-repeat: no-repeat;
+            min-height: 100%;
+            background-size: cover;
+            margin: 0;
+            width: 50px;
+            height: 50px;
+
+        }
     </style>
 
 </head>
 
 <body>
 
-    <header>
+    <!-- header -->
+    <header id="img">
         <div class="tac">
-            <h1></h1>
+            <h1>Viajes Eriki</h1>
         </div>
     </header>
-    <!-- header -->
+
 
     <nav>
         <!-- Start Menu -->
         <div class="snazzymenu">
             <ul id="menu-main-nav" class="menu">
-                <li id="" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a
-                        href="">Aprenda</a>
-                    <ul class="sub-menu">
-                        <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Aprende
-                                con nosotros</a></li>
-                        <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                href="">Relajese</a></li>
-                        <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Aprenda
-                                programación Movil</a></li>
-                    </ul>
-                </li>
                 <li id="" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a
                         href="">Bosques</a>
                     <ul class="sub-menu">
@@ -164,9 +193,22 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a
                                 href="">Column Title</a>
                         </li>
+
                     </ul>
                 </li>
-                <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Link a la pagina</a>
+                <li id="" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a
+                        href="">Trabaje con nosotros</a>
+                    <ul class="sub-menu">
+                        <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Aprende
+                                con nosotros</a></li>
+                        <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                href="">Relajese</a></li>
+                        <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Aprenda
+                                programación Movil</a></li>
+                    </ul>
+                </li>
+                <li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Link a la
+                        pagina</a>
                 </li>
             </ul>
         </div>
@@ -175,70 +217,74 @@
 
 
     <div class="content">
+        <br>
         <section class="tac">
-           <h1>asdfsda</h1>
-        </section>
-        <section>
-            <h1 class="tac">Section</h1>
-            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
-                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
-                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
-                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
-                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
-                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
-        </section>
-        <section>
-            <h1 class="tac">Section</h1>
-            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
-                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
-                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
-                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
-                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
-                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
-        </section>
-        <section>
-            <h1 class="tac">Section</h1>
-            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
-                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
-                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
-                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
-                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
-                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
-        </section>
-        <section>
-            <h1 class="tac">Section</h1>
-            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
-                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
-                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
-                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
-                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
-                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
-        </section>
-        <section>
-            <h1 class="tac">Section</h1>
-            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
-                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
-                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
-                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
-                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
-                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
-        </section>
-        <section>
-            <h1 class="tac">Section</h1>
-            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
-                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
-                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
-                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
-                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
-                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
+            <h1>Conocenos un poco más</h1>
         </section>
 
-        <section>
-            <p id="copyright">&copy; <span id="year"></span> Viajes Eriki Todos los derechos reservados.</p>
-        </section>
+        <div id="avion"></div>
 
+        <br>
+        <br>
+        <section>
+            <h1 class="tac">Section</h1>
+            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
+                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
+                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
+                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
+                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
+                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
+        </section>
+        <section>
+            <h1 class="tac">Section</h1>
+            <p>Aliqua sit minim officia proident anim qui sit. In exercitation ut aliquip amet cillum proident ullamco
+                et ad incididunt. Sunt pariatur proident dolore est sunt aliqua mollit irure voluptate do. Anim veniam
+                reprehenderit veniam officia nulla eu labore qui minim fugiat tempor irure. Amet consequat ex nisi
+                eiusmod aliquip cillum do laboris eiusmod laboris occaecat excepteur et. Pariatur tempor occaecat sunt
+                ipsum ullamco sunt dolor aliqua elit laboris quis. Eiusmod nulla consectetur cillum commodo esse
+                exercitation ea culpa proident magna ipsum deserunt dolore.</p>
+        </section>
     </div>
 
+
+
+    <footer id="footer">
+        <p id="copyright">&copy; <span id="year"></span> Viajes Eriki Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script type="text/javascript">
+        //CREAR UN PAR DE BOTONES PARA QUE EL USUARIO PUEDA CAMBIAR POR EJEMPLO EL COLOR DE LAS LETRAS Y 
+        //EL COLOR DE FONDO
+    </script>
+
+
+    <script type="text/javascript">
+        //Animacion del avion hasta el borde del ancho ida y vuelta al pasar por encima 
+
+        let ancho = $(window).width() - 550;
+
+        $(document).ready(function () {
+            $("#avion").css("left", "0px");
+            $("#avion").hover(function () {
+                $("#avion").animate({
+                    left: ancho
+                }, 4000);
+            });
+        });
+
+        if ($("#avion").css("left", ancho)) {
+
+            $(document).ready(function () {
+                $("#avion").hover(function () {
+                    $("#avion").animate({
+                        left: "0px"
+                    }, 2000);
+                });
+            });
+
+        }
+    </script>
 
     <script type="text/javascript" src="dist/js/snazzymenu.min.js"></script>
     <script type="text/javascript">
@@ -247,32 +293,31 @@
             jQuery('.snazzymenu').snazzyMenu({
                 sticky: true,
                 theme: 'dark',
-                phoneBtn: '888-888-8888',
-                locationBtn: 'https://goo.gl/maps/r67upT9SLPFjGNbbA',
+                /*phoneBtn: '888-888-8888',
+                locationBtn: 'https://goo.gl/maps/r67upT9SLPFjGNbbA',*/
                 colClasses: true,
             });
 
             // Añadir imagenes personalizadas
-            jQuery('.column-1').prepend('<img src="app/images/tech1.jpg">');
-            jQuery('.column-2').prepend('<img src="app/images/tech2.jpg">');
-            jQuery('.column-3').prepend('<img src="app/images/tech3.jpg">');
-            jQuery('.column-4').prepend('<img src="app/images/nature1.jpg">');
-            jQuery('.column-5').prepend('<img src="app/images/nature2.jpg">');
-            jQuery('.column-6').prepend('<img src="app/images/nature3.jpg">');
-            jQuery('.column-7').prepend('<img src="app/images/nature4.jpg">');
-            jQuery('.column-8').prepend('<img src="app/images/nature5.jpg">');
-            jQuery('.column-9').prepend('<img src="app/images/nature6.jpg">');
-            jQuery('.column-10').prepend('<img src="app/images/nature7.jpg">');
-            jQuery('.column-11').prepend('<img src="app/images/nature8.jpg">');
-            jQuery('.column-12').append('<img src="app/images/nature7.jpg">');
-            jQuery('.column-13').append('<img src="app/images/tech1.jpg">');
-            jQuery('.column-14').append('<img src="app/images/nature4.jpg">');
+            jQuery('.column-6').prepend('<img src="app/imgs/tech1.jpg">');
+            jQuery('.column-7').prepend('<img src="app/imgs/tech2.jpg">');
+            jQuery('.column-8').prepend('<img src="app/imgs/tech3.jpg">');
+            jQuery('.column-1').prepend('<img src="app/imgs/nature1.jpg">');
+            jQuery('.column-2').prepend('<img src="app/imgs/nature2.jpg">');
+            jQuery('.column-3').prepend('<img src="app/imgs/nature3.jpg">');
+            jQuery('.column-4').prepend('<img src="app/imgs/nature4.jpg">');
+            jQuery('.column-5').prepend('<img src="app/imgs/nature5.jpg">');
+            jQuery('.column-9').prepend('<img src="app/imgs/nature6.jpg">');
+            jQuery('.column-10').prepend('<img src="app/imgs/nature7.jpg">');
+            jQuery('.column-11').prepend('<img src="app/imgs/nature8.jpg">');
+            jQuery('.column-12').append('<img src="app/imgs/nature7.jpg">');
+            jQuery('.column-13').append('<img src="app/imgs/tech1.jpg">');
+            jQuery('.column-14').append('<img src="app/imgs/nature4.jpg">');
 
             // Añadir clase para imagenes responsive
             jQuery('.column-title img').addClass('img-resp');
         });
     </script>
-
 
     <script>
         //Script el cual coje el año actual
